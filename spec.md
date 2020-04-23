@@ -42,3 +42,18 @@ These are all the smaller feature that the site must provide
     * Ie. 3rd Party UI => Component => Page
   * Scoped CSS: If new pages should be added down the road, existing CSS should not interfere with new CSS.
   * F.U.T.U.R.E.P.R.O.O.F - This site must last for 18-24 with changes within that time frame.
+
+
+
+
+### Pages
+
+The site should have these pages
+
+- / (home page)
+- /about
+- /projects
+- /contact
+- /links
+- /blog
+

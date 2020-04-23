@@ -58,6 +58,18 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
 
+      - file: cms/pages/links.md
+        label: "Links Page"
+        name: "links"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "links-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+
   - name: "components"
     label: "Components"
     files:
@@ -72,3 +84,36 @@ collections:
               default: "home-page",
             }
           - { label: "Email", name: "email", widget: "string" }
+      - file: cms/components/header.md
+        label: "Header"
+        name: "header"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "home-page",
+            }
+          - {
+              label: "Header Brand Text",
+              name: "headerBrand",
+              widget: "string",
+            }
+          - {
+              label: "Header Links",
+              name: "headerLinks",
+              widget: "list",
+              fields:
+                [
+                  { label: "Link Name", name: "linkName", widget: "string" },
+                  { label: "Link Value", name: "linkHref", widget: "string" },
+                  { label: "Link Alt", name: "linkAlt", widget: "string" },
+                  {
+                    label: "Link Type",
+                    name: "linkType",
+                    widget: "select",
+                    options: ["external", "internal"],
+                    default: "internal",
+                  },
+                ],
+            }
