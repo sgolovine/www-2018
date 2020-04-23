@@ -1,0 +1,36 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "Website for Sunny Golovine",
+  "main": "index.js",
+  "author": "Sunny Golovine",
+  "license": "MIT",
+  "homepage": "https://glvn.co",
+  "dependencies": {
+    "gatsby": "^2.20.29",
+    "gatsby-plugin-typescript": "^2.3.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.2",
+    "@types/react": "^16.9.34",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-preset-gatsby": "^0.3.4",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "prettier": "prettier --write ./src/**/*.{ts,tsx,js,jsx}",
+    "lint": "eslint ./src/**/*.{ts,tsx,js,jsx}",
+    "typecheck": "tsc",
+    "ci": "yarn typecheck && yarn lint && yarn prettier",
+    "cleanup": "rm -rf .cache node_modules public"
+  }
+}
