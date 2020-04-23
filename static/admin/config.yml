@@ -1,0 +1,74 @@
+backend:
+  name: test-repo
+
+media_folder: static/assets
+public_folder: /assets
+
+display_url: https://glvn.co
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: cms/pages/index.md
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "home-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+
+      - file: cms/pages/about.md
+        label: "About Page"
+        name: "about"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+
+      - file: cms/pages/projects.md
+        label: "Projects Page"
+        name: "projects"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "projects-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+
+      - file: cms/pages/contact.md
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+
+  - name: "components"
+    label: "Components"
+    files:
+      - file: cms/components/contact-info.md
+        label: "Contact Info"
+        name: "contact-info"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "home-page",
+            }
+          - { label: "Email", name: "email", widget: "string" }
