@@ -9,6 +9,7 @@
   "dependencies": {
     "gatsby": "^2.20.29",
     "gatsby-plugin-typescript": "^2.3.3",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
