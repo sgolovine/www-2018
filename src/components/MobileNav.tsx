@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import Modal from 'react-modal'
 
 const links = [
   {
@@ -31,32 +32,51 @@ const links = [
 
 export const MenuButton = styled.button``
 
-export const MobileNav = ({ onClose }: { onClose: () => void }) => {
+export const MobileNav = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
+  const handleClose = () => setIsOpen(false)
+
   return (
-    <MenuContainer>
-      <TopContainer>
-        <MenuHeader>Menu</MenuHeader>
-        <div>
-          <button onClick={onClose}>CLOSE</button>
-        </div>
-      </TopContainer>
-      <MenuItemsContainer>
-        {links.map((item, index) => {
-          return (
-            <MenuItem key={index} onClick={onClose} to={item.path}>
-              {item.name}
-            </MenuItem>
-          )
-        })}
-      </MenuItemsContainer>
-    </MenuContainer>
+    <>
+      <MenuButton onClick={() => setIsOpen(true)}>MENU</MenuButton>
+      <StyledModal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+        contentLabel="Mobile Menu"
+      >
+        <MenuContainer>
+          <TopContainer>
+            <button onClick={handleClose}>CLOSE</button>
+          </TopContainer>
+          <MenuItemsContainer>
+            {links.map((item, index) => {
+              return (
+                <MenuItem key={index} onClick={handleClose} to={item.path}>
+                  {item.name}
+                </MenuItem>
+              )
+            })}
+          </MenuItemsContainer>
+        </MenuContainer>
+      </StyledModal>
+    </>
   )
 }
+
+const StyledModal = styled(Modal)`
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-width: 0;
+  background-color: white !important;
+  outline: none !important;
+`
 
 const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.5em;
 `
 
 const MenuItemsContainer = styled.div`
@@ -70,9 +90,9 @@ const MenuItemsContainer = styled.div`
 const TopContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  padding: 1.5em;
   flex-grow: 0;
-  align-items: center;
 `
 
 const MenuHeader = styled.p`

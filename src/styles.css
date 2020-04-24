@@ -1,0 +1,12 @@
+/* Killing the outline,
+there is a bug where you get a yellow outline 
+when rendering something on mobile
+**/
+
+html, body {
+  outline: none;
+}
+
+html:focus, body:focus {
+  outline: none;
+}

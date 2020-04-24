@@ -1,19 +1,13 @@
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { Nav } from '~/components/Nav'
-import { MobileNav } from '~/components/MobileNav'
 import { fadeInContent } from '~/helpers/animation'
 
 export const PageLayout = ({ children }: { children: ReactNode }) => {
-  const [mobileHeaderOpen, setMobileHeaderOpen] = useState(false)
-
-  if (mobileHeaderOpen) {
-    return <MobileNav onClose={() => setMobileHeaderOpen(false)} />
-  }
   return (
     <OuterContainer>
       <InnerContainer>
-        <Nav onMenuOpen={() => setMobileHeaderOpen(true)} />
+        <Nav />
         <AnimatedContent>{children}</AnimatedContent>
       </InnerContainer>
     </OuterContainer>

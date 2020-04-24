@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { MenuButton } from './MobileNav'
+import { MobileNav } from './MobileNav'
 import { useWindowDimensions } from '~/hooks/useWindowDimensions'
 import { fadeInHeader } from '~/helpers/animation'
 
@@ -37,7 +37,7 @@ const links = [
   },
 ]
 
-export const Nav = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
+export const Nav = () => {
   const windowDimensions = useWindowDimensions()
 
   const [showMobileMenu, setShowMobileMenu] = useState(
@@ -64,7 +64,7 @@ export const Nav = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
   return (
     <NavContainer>
       {showMobileMenu ? (
-        <MenuButton onClick={onMenuOpen}>MENU</MenuButton>
+        <MobileNav />
       ) : (
         <HeaderLinkContainer>{renderLinks()}</HeaderLinkContainer>
       )}
@@ -78,7 +78,6 @@ const NavContainer = styled.div`
   justify-content: flex-end;
   height: 50px;
   align-items: center;
-  padding-top: 1.5em;
   @media (max-width: 1439px) {
     padding-left: 1em;
     padding-right: 1em;

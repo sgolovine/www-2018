@@ -24,6 +24,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2",
     "react-typography": "^0.16.19",
     "styled-components": "^5.1.0",
     "typography": "^0.16.19",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
+    "@types/react-modal": "^3.10.5",
     "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
