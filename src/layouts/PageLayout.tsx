@@ -2,6 +2,7 @@ import React, { ReactNode, useState } from 'react'
 import styled from 'styled-components'
 import { Nav } from '~/components/Nav'
 import { MobileNav } from '~/components/MobileNav'
+import { fadeInContent } from '~/helpers/animation'
 
 export const PageLayout = ({ children }: { children: ReactNode }) => {
   const [mobileHeaderOpen, setMobileHeaderOpen] = useState(false)
@@ -13,7 +14,7 @@ export const PageLayout = ({ children }: { children: ReactNode }) => {
     <OuterContainer>
       <InnerContainer>
         <Nav onMenuOpen={() => setMobileHeaderOpen(true)} />
-        <ContentContainer>{children}</ContentContainer>
+        <AnimatedContent>{children}</AnimatedContent>
       </InnerContainer>
     </OuterContainer>
   )
@@ -37,4 +38,8 @@ const ContentContainer = styled.div`
   @media (max-width: 500px) {
     margin-top: 10em;
   }
+`
+
+const AnimatedContent = styled(ContentContainer)`
+  animation: ${fadeInContent} ease-in 500ms;
 `

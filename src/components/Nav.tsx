@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { MenuButton } from './MobileNav'
 import { useWindowDimensions } from '~/hooks/useWindowDimensions'
+import { fadeInHeader } from '~/helpers/animation'
 
 /*
  * TODO:
@@ -95,6 +96,7 @@ const HeaderLinkContainer = styled.div`
     justify-content: flex-start;
     width: 100%;
   }
+  animation: ${fadeInHeader} ease-in 500ms;
 `
 
 const NavLink = styled(Link)`
