@@ -22,6 +22,7 @@ collections:
               default: "home-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "PageContent", name: "pageContent", widget: "markdown" }
 
       - file: cms/pages/about.md
         label: "About Page"
@@ -34,6 +35,7 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "PageContent", name: "pageContent", widget: "markdown" }
 
       - file: cms/pages/projects.md
         label: "Projects Page"
@@ -46,6 +48,44 @@ collections:
               default: "projects-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Top Content", name: "topContent", widget: "markdown" }
+          - {
+              label: "Projects",
+              name: projectList,
+              widget: "list",
+              fields:
+                [
+                  {
+                    label: "Project Name",
+                    name: "projectName",
+                    widget: string,
+                  },
+                  {
+                    label: "Project Description",
+                    name: "projectDesc",
+                    widget: string,
+                  },
+                  {
+                    label: "Project Web URL",
+                    name: "projectLinks",
+                    widget: list,
+                    fields:
+                      [
+                        {
+                          label: "Link Name",
+                          name: "linkName",
+                          widget: string,
+                        },
+                        {
+                          label: "Link URL",
+                          name: "linkHref",
+                          widget: "string",
+                        },
+                      ],
+                  },
+                ],
+            }
+          - { label: "Bottom Text", name: "bottomContent", widget: "markdown" }
 
       - file: cms/pages/contact.md
         label: "Contact Page"
@@ -58,6 +98,12 @@ collections:
               default: "contact-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Top Content", name: "topContent", widget: "markdown" }
+          - {
+              label: "Bottom Content",
+              name: "bottomContent",
+              widget: "markdown",
+            }
 
       - file: cms/pages/links.md
         label: "Links Page"
@@ -70,6 +116,27 @@ collections:
               default: "links-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Top Content", name: "topContent", widget: "markdown" }
+          - {
+              label: "Links",
+              name: linkList,
+              widget: "list",
+              fields:
+                [
+                  { label: "Link Name", name: "linkName", widget: string },
+                  {
+                    label: "Project Description",
+                    name: "projectDesc",
+                    widget: string,
+                  },
+                  { label: "Link URL", name: "linkHref", widget: string },
+                ],
+            }
+          - {
+              label: "Bottom Content",
+              name: "bottomContent",
+              widget: "markdown",
+            }
 
   - name: "components"
     label: "Components"
