@@ -64,7 +64,6 @@ export const Header = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
 
   return (
     <HeaderContainer>
-      <HeaderBrand>{headerBrand}</HeaderBrand>
       {showMobileMenu ? (
         <MenuButton onClick={onMenuOpen}>MENU</MenuButton>
       ) : (
@@ -77,7 +76,7 @@ export const Header = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 50px;
   align-items: center;
   padding-top: 1.5em;
@@ -117,9 +116,4 @@ const HeaderLink = styled(Link)`
     color: white;
     background-color: black;
   }
-`
-
-const HeaderBrand = styled.p`
-  font-weight: bold;
-  font-size: 18px;
 `
