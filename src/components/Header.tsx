@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { MenuButton } from './MobileNav'
+import { useWindowDimensions } from '~/hooks/useWindowDimensions'
 
-/**
+/*
  * TODO:
  * This should all go into CMS
  */
@@ -36,7 +38,21 @@ const links = [
   },
 ]
 
-export const Header = () => {
+export const Header = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
+  const windowDimensions = useWindowDimensions()
+
+  const [showMobileMenu, setShowMobileMenu] = useState(
+    windowDimensions.width < 900 ? true : false
+  )
+
+  useEffect(() => {
+    if (windowDimensions.width < 900) {
+      setShowMobileMenu(true)
+    } else {
+      setShowMobileMenu(false)
+    }
+  }, [windowDimensions])
+
   const renderLinks = () =>
     links.map((link, index) => {
       return (
@@ -49,7 +65,11 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderBrand>{headerBrand}</HeaderBrand>
-      <HeaderLinkContainer>{renderLinks()}</HeaderLinkContainer>
+      {showMobileMenu ? (
+        <MenuButton onClick={onMenuOpen}>MENU</MenuButton>
+      ) : (
+        <HeaderLinkContainer>{renderLinks()}</HeaderLinkContainer>
+      )}
     </HeaderContainer>
   )
 }
@@ -64,14 +84,6 @@ const HeaderContainer = styled.div`
   @media (max-width: 1439px) {
     padding-left: 1em;
     padding-right: 1em;
-  }
-  @media (max-width: 900px) {
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 2.5em;
-  }
-  @media (max-width: 500px) {
-    padding-top: 7.5em;
   }
 `
 
@@ -98,9 +110,12 @@ const HeaderLink = styled(Link)`
   font-size: 16px;
   text-decoration: none;
   color: #000;
+  font-weight: bold;
+  padding: 0.25em;
   :hover {
-    text-decoration: underline;
-    color: blue;
+    text-decoration: none;
+    color: white;
+    background-color: black;
   }
 `
 

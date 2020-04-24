@@ -1,12 +1,18 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import styled from 'styled-components'
 import { Header } from '~/components/Header'
+import { MobileNav } from '~/components/MobileNav'
 
 export const PageLayout = ({ children }: { children: ReactNode }) => {
+  const [mobileHeaderOpen, setMobileHeaderOpen] = useState(false)
+
+  if (mobileHeaderOpen) {
+    return <MobileNav onClose={() => setMobileHeaderOpen(false)} />
+  }
   return (
     <OuterContainer>
       <InnerContainer>
-        <Header />
+        <Header onMenuOpen={() => setMobileHeaderOpen(true)} />
         <ContentContainer>{children}</ContentContainer>
       </InnerContainer>
     </OuterContainer>
