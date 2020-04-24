@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Modal from 'react-modal'
+import { GrClose, GrMenu } from 'react-icons/gr'
 
 const links = [
   {
@@ -30,8 +31,6 @@ const links = [
   },
 ]
 
-export const MenuButton = styled.button``
-
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -39,16 +38,16 @@ export const MobileNav = () => {
 
   return (
     <>
-      <MenuButton onClick={() => setIsOpen(true)}>MENU</MenuButton>
+      <GrMenu onClick={() => setIsOpen(true)} />
       <StyledModal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
         contentLabel="Mobile Menu"
       >
         <MenuContainer>
-          <TopContainer>
-            <button onClick={handleClose}>CLOSE</button>
-          </TopContainer>
+          <HeaderContainer>
+            <GrClose onClick={handleClose} />
+          </HeaderContainer>
           <MenuItemsContainer>
             {links.map((item, index) => {
               return (
@@ -64,12 +63,18 @@ export const MobileNav = () => {
   )
 }
 
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1em;
+`
+
 const StyledModal = styled(Modal)`
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  border-width: 0;
   background-color: white !important;
   outline: none !important;
 `
@@ -85,19 +90,6 @@ const MenuItemsContainer = styled.div`
   justify-content: space-evenly;
   height: 75vh;
   align-items: center;
-`
-
-const TopContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 1.5em;
-  flex-grow: 0;
-`
-
-const MenuHeader = styled.p`
-  font-size: 1.5rem;
-  font-weight: bold;
 `
 
 const MenuItem = styled(Link)`

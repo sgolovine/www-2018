@@ -63,11 +63,9 @@ export const Nav = () => {
 
   return (
     <NavContainer>
-      {showMobileMenu ? (
-        <MobileNav />
-      ) : (
-        <HeaderLinkContainer>{renderLinks()}</HeaderLinkContainer>
-      )}
+      <HeaderLinkContainer>
+        {showMobileMenu ? <MobileNav /> : renderLinks()}
+      </HeaderLinkContainer>
     </NavContainer>
   )
 }
