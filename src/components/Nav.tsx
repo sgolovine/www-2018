@@ -9,8 +9,6 @@ import { useWindowDimensions } from '~/hooks/useWindowDimensions'
  * This should all go into CMS
  */
 
-const headerBrand = 'Sunny Golovine'
-
 const links = [
   {
     name: 'Home',
@@ -38,7 +36,7 @@ const links = [
   },
 ]
 
-export const Header = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
+export const Nav = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
   const windowDimensions = useWindowDimensions()
 
   const [showMobileMenu, setShowMobileMenu] = useState(
@@ -56,24 +54,24 @@ export const Header = ({ onMenuOpen }: { onMenuOpen: () => void }) => {
   const renderLinks = () =>
     links.map((link, index) => {
       return (
-        <HeaderLink key={index} to={link.path}>
+        <NavLink key={index} to={link.path}>
           {link.name}
-        </HeaderLink>
+        </NavLink>
       )
     })
 
   return (
-    <HeaderContainer>
+    <NavContainer>
       {showMobileMenu ? (
         <MenuButton onClick={onMenuOpen}>MENU</MenuButton>
       ) : (
         <HeaderLinkContainer>{renderLinks()}</HeaderLinkContainer>
       )}
-    </HeaderContainer>
+    </NavContainer>
   )
 }
 
-const HeaderContainer = styled.div`
+const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -99,7 +97,7 @@ const HeaderLinkContainer = styled.div`
   }
 `
 
-const HeaderLink = styled(Link)`
+const NavLink = styled(Link)`
   margin-left: 1em;
   margin-right: 1em;
   @media (max-width: 500px) {

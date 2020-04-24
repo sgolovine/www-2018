@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react'
 import styled from 'styled-components'
-import { Header } from '~/components/Header'
+import { Nav } from '~/components/Nav'
 import { MobileNav } from '~/components/MobileNav'
 
 export const PageLayout = ({ children }: { children: ReactNode }) => {
@@ -12,7 +12,7 @@ export const PageLayout = ({ children }: { children: ReactNode }) => {
   return (
     <OuterContainer>
       <InnerContainer>
-        <Header onMenuOpen={() => setMobileHeaderOpen(true)} />
+        <Nav onMenuOpen={() => setMobileHeaderOpen(true)} />
         <ContentContainer>{children}</ContentContainer>
       </InnerContainer>
     </OuterContainer>
