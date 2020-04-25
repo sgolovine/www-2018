@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import { Paragraph, HTMLParagraph } from '~/components/Paragraph'
+import { HTMLParagraph } from '~/components/Paragraph'
 
 const query = graphql`
   query {

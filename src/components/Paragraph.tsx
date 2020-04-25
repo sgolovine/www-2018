@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
 export const Paragraph = styled.p`
@@ -9,6 +9,6 @@ const _HTMLParagraph = styled.div`
   line-height: 2;
 `
 
-export const HTMLParagraph = ({ children }: { children: any }) => (
+export const HTMLParagraph = ({ children }: { children: string }) => (
   <_HTMLParagraph dangerouslySetInnerHTML={{ __html: children }} />
 )
