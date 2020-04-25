@@ -142,6 +142,13 @@ collections:
               default: "home-page",
             }
           - { label: "Email", name: "email", widget: "string" }
+          - { label: "Resume", name: "resume", widget: "string" }
+          - { label: "Github", name: "github", widget: "string" }
+          - { label: "LinkedIn", name: "linkedin", widget: "string" }
+          - { label: "Instagram", name: "instagram", widget: "string" }
+          - { label: "Medium", name: "medium", widget: "string" }
+          - { label: "Dev.to", name: "dev", widget: "string" }
+
       - file: cms/components/header.md
         label: "Header"
         name: "header"
