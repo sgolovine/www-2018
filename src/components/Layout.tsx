@@ -1,21 +1,34 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Nav } from '~/components/Nav'
 import { fadeInContent } from '~/helpers/animation'
 
-export const Layout = ({ children }: { children: ReactNode }) => {
-  return (
-    <Container>
-      <Nav />
-      {children}
-    </Container>
-  )
+export const RootLayout = ({ children }: { children: ReactNode }) => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  return <RootContainer>{children}</RootContainer>
 }
 
-const Container = styled.div`
+export const PageLayout = ({ children }: { children: ReactNode }) => (
+  <PageContainer>
+    <Nav />
+    {children}
+  </PageContainer>
+)
+
+const PageContainer = styled.div`
+  animation: ${fadeInContent} ease-in 500ms;
+`
+
+const RootContainer = styled.div`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 1.5em;
-  animation: ${fadeInContent} ease-in 500ms;
 `
