@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import marked from 'marked'
+import { HTMLParagraph } from '~/components/Paragraph'
 
 const query = graphql`
   query {
@@ -27,7 +28,7 @@ export default () => {
   return (
     <>
       <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <HTMLParagraph>{htmlContent}</HTMLParagraph>
     </>
   )
 }

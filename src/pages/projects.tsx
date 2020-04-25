@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
+import { Paragraph, HTMLParagraph } from '~/components/Paragraph'
 
 const query = graphql`
   query {
@@ -73,7 +74,7 @@ export default () => {
   return (
     <>
       <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: topContent }} />
+      <HTMLParagraph>{topContent}</HTMLParagraph>
       <ProjectList>{renderList()}</ProjectList>
     </>
   )
@@ -83,7 +84,6 @@ const ProjectList = styled.div`
   margin-top: 3.5em;
 `
 const ProjectListItem = styled.div`
-  width: 700px;
   margin-top: 75px;
 `
 

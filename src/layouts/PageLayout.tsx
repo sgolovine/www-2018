@@ -35,5 +35,6 @@ const ContentContainer = styled.div`
 `
 
 const AnimatedContent = styled(ContentContainer)`
+  max-width: 700px;
   animation: ${fadeInContent} ease-in 500ms;
 `
