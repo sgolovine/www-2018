@@ -127,11 +127,6 @@ collections:
                   { label: "Link URL", name: "linkHref", widget: string },
                 ],
             }
-          - {
-              label: "Bottom Content",
-              name: "bottomContent",
-              widget: "markdown",
-            }
 
   - name: "components"
     label: "Components"
