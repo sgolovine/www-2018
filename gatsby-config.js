@@ -5,6 +5,7 @@ module.exports = {
     author: `Sunny Golovine`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -53,7 +54,6 @@ module.exports = {
         pathToConfigModule: `src/helpers/typography.ts`,
       },
     },
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-typescript`,
   ],

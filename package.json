@@ -58,6 +58,6 @@
     "ci": "yarn typecheck && yarn lint && yarn prettier",
     "cleanup": "rm -rf .cache node_modules public",
     "serve": "serve -s public",
-    "prod": "yarn cleanup && yarn && yarn build && yarn serve"
+    "prod": "yarn build && yarn serve"
   }
 }
