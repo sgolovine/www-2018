@@ -99,11 +99,6 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Top Content", name: "topContent", widget: "markdown" }
-          - {
-              label: "Bottom Content",
-              name: "bottomContent",
-              widget: "markdown",
-            }
 
       - file: cms/pages/links.md
         label: "Links Page"
