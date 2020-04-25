@@ -87,12 +87,6 @@ const HeaderLinkContainer = styled.div`
     padding-top: 1em;
     padding-bottom: 1em;
   }
-  @media (max-width: 500px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-  }
   animation: ${fadeInHeader} ease-in 500ms;
 `
 
