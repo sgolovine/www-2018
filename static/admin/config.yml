@@ -112,21 +112,6 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Top Content", name: "topContent", widget: "markdown" }
-          - {
-              label: "Links",
-              name: linkList,
-              widget: "list",
-              fields:
-                [
-                  { label: "Link Name", name: "linkName", widget: string },
-                  {
-                    label: "Project Description",
-                    name: "projectDesc",
-                    widget: string,
-                  },
-                  { label: "Link URL", name: "linkHref", widget: string },
-                ],
-            }
 
   - name: "components"
     label: "Components"
