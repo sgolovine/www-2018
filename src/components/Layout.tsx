@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Nav } from '~/components/Nav'
 import { fadeInContent } from '~/helpers/animation'
 
-export const PageLayout = ({ children }: { children: ReactNode }) => {
+export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <OuterContainer>
       <InnerContainer>
