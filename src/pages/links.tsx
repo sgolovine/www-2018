@@ -1,68 +1,54 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import marked from 'marked'
 import { HTMLParagraph } from '~/components/Paragraph'
-
-const pageDataQuery = graphql`
-  query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/pages/links.md/g" } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          topContent
-        }
-      }
-    }
-  }
-`
-
-// const contactInfoQuery = graphql`
-//   query {
-//     allMarkdownRemark(
-//       filter: { fileAbsolutePath: { regex: "/components/contact-info.md/g" } }
-//     ) {
-//       nodes {
-//         frontmatter {
-//           email
-//           instagram
-//           dev
-//           github
-//           linkedin
-//           medium
-//           resume
-//         }
-//       }
-//     }
-//   }
-// `
+import { useLinksPageData } from '~/hooks/graphql/pages/useLinksPageData'
+import { useContactInfo } from '~/hooks/graphql/useContactInfo'
+import styled from 'styled-components'
 
 export default () => {
-  const pageData = useStaticQuery(pageDataQuery)
-  // const contactData = useStaticQuery(contactInfoQuery)
+  const { title, htmlContent } = useLinksPageData()
+  const { email, instagram, dev, github, linkedin, medium } = useContactInfo()
 
-  const {
-    title,
-    topContent,
-  } = pageData?.allMarkdownRemark?.nodes[0]?.frontmatter
-
-  // const {
-  //   email,
-  //   instagram,
-  //   dev,
-  //   github,
-  //   linkedin,
-  //   medium,
-  //   resume,
-  // } = contactData?.allMarkdownRemark?.nodes[0].frontmatter
-
-  const htmlContent = marked(topContent)
+  const renderLinks = () => {
+    return (
+      <LinksContainer>
+        <Link target="_blank" rel="noopener noreferrer" href={email.link}>
+          Email - {email.username}
+        </Link>
+        <Link target="_blank" rel="noopener noreferrer" href={instagram.link}>
+          Instagram - {instagram.username}
+        </Link>
+        <Link target="_blank" rel="noopener noreferrer" href={dev.link}>
+          Dev - {dev.username}
+        </Link>
+        <Link target="_blank" rel="noopener noreferrer" href={github.link}>
+          Github - {github.username}
+        </Link>
+        <Link target="_blank" rel="noopener noreferrer" href={linkedin.link}>
+          Linkedin - {linkedin.username}
+        </Link>
+        <Link target="_blank" rel="noopener noreferrer" href={medium.link}>
+          Medium - {medium.username}
+        </Link>
+      </LinksContainer>
+    )
+  }
 
   return (
     <>
       <h1>{title}</h1>
       <HTMLParagraph>{htmlContent}</HTMLParagraph>
+      {renderLinks()}
     </>
   )
 }
+
+const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+`
+
+const Link = styled.a`
+  margin-top: 1em;
+  margin-bottom: 1em;
+`
