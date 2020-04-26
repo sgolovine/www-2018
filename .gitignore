@@ -1,3 +1,9 @@
 node_modules
+
+# Build artifacts
 .cache
 public
+
+# Enviorment Varbles / DotENV
+.env*
+!.env.example
