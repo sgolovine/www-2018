@@ -2038,6 +2038,11 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
+"@types/is-blank@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@types/is-blank/-/is-blank-2.1.0.tgz#fc20dd5691d4cfd40b2fe45a1d4f1c4459b30a9a"
+  integrity sha512-D8ZaMMhxD26yZe7fCkGyMuZ+Uu3/3N2gNOxfRIvZukhE2cRmOEWwM/25jTy0Io545Xk17P8FkRRr5Ohl50s9cA==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"

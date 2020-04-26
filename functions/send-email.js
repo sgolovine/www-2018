@@ -9,6 +9,8 @@ module.exports.handler = async function (event) {
 
   const params = JSON.parse(event.body)
 
+  console.log(params)
+
   const { name, email, message } = params
 
   mail.setApiKey(SENDGRID_API_KEY)

@@ -1,24 +1,76 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import isBlank from 'is-blank'
+import { postContactForm } from '~/requests/postContactForm'
 
 export const ContactForm = () => {
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+
+  const handleSubmit = () => {
+    if (isBlank(name)) {
+      alert('Please enter a name')
+      return
+    }
+    if (isBlank(email)) {
+      alert('Please enter an email')
+      return
+    }
+    if (isBlank(message)) {
+      alert('Please enter a message')
+      return
+    }
+    postContactForm({ name, email, message }).then((resp) => console.log(resp))
+  }
+
+  const handleClear = () => {
+    setName('')
+    setEmail('')
+    setMessage('')
+  }
+
   return (
     <Container>
       <Section>
         <Label>Name</Label>
-        <Input name="name" placeholder="Name" />
+        <Input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          type="text"
+          name="name"
+          placeholder="Name"
+        />
       </Section>
 
       <Section>
         <Label>Email</Label>
-        <Input name="email" placeholder="Email" />
+        <Input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          name="email"
+          placeholder="Email"
+        />
       </Section>
 
       <Section>
         <Label>Message</Label>
-        <TextArea wrap="soft" rows={4} name="message" placeholder="Message" />
+        <TextArea
+          wrap="soft"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          rows={4}
+          name="message"
+          placeholder="Message"
+        />
       </Section>
-      <Button>Submit</Button>
+      <ButtonContainer>
+        <Button type="submit" onClick={handleSubmit}>
+          Submit
+        </Button>
+        <Button onClick={handleClear}>Clear</Button>
+      </ButtonContainer>
     </Container>
   )
 }
@@ -56,4 +108,11 @@ const Button = styled.button`
   :hover {
     border: 1px solid;
   }
+`
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 250px;
+  justify-content: space-between;
 `
