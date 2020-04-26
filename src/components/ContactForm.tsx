@@ -18,16 +18,22 @@ export const ContactForm = () => {
         <Label>Message</Label>
         <TextArea wrap="soft" rows={4} name="message" placeholder="Message" />
       </Section>
+      <Button>Submit</Button>
     </Container>
   )
 }
 
-const Container = styled.div``
+const Container = styled.div`
+  @media (max-width: 900px) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+`
 
 const Section = styled.div`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
   margin-top: 1em;
   margin-bottom: 1em;
   textarea {
@@ -40,14 +46,14 @@ const Label = styled.label`
   font-size: 16px;
 `
 
-const Input = styled.input`
-  :focused {
-    border: 3px solid red;
-  }
-`
+const Input = styled.input``
 
-const TextArea = styled.textarea`
-  :focused {
-    border: 3px solid red;
+const TextArea = styled.textarea``
+
+const Button = styled.button`
+  background-color: transparent;
+  border-width: 0;
+  :hover {
+    border: 1px solid;
   }
 `

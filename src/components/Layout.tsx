@@ -31,6 +31,10 @@ const RootContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: 1.5em;
+  @media (max-width: 900px) {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
 `
 
 const ContentContainer = styled.div`
