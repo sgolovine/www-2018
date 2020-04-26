@@ -18,7 +18,7 @@ export const RootLayout = ({ children }: { children: ReactNode }) => {
 export const PageLayout = ({ children }: { children: ReactNode }) => (
   <PageContainer>
     <Nav />
-    {children}
+    <ContentContainer>{children}</ContentContainer>
   </PageContainer>
 )
 
@@ -31,4 +31,8 @@ const RootContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: 1.5em;
+`
+
+const ContentContainer = styled.div`
+  max-width: 800px;
 `
