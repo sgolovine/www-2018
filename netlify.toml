@@ -1,0 +1,13 @@
+[build]
+  # Base Directory
+  base = '/'
+  
+  # Build Command
+  publish = '/public'
+
+  # Publish Directory (after build)
+  command = 'yarn build'
+
+  # Functions directory
+  functions = '/functions'
+
