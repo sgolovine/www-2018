@@ -1,10 +1,6 @@
 import React from 'react'
-import { PageLayout, RootLayout } from './src/components/Layout'
-
-export const wrapRootElement = ({ element, props }) => {
-  return <RootLayout {...props}>{element}</RootLayout>
-}
+import { Layout } from './src/layout/Layout'
 
 export const wrapPageElement = ({ element, props }) => {
-  return <PageLayout {...props}>{element}</PageLayout>
+  return <Layout {...props}>{element}</Layout>
 }

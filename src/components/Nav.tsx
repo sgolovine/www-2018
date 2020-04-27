@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { MobileNav } from './MobileNav'
 import { useWindowDimensions } from '~/hooks/useWindowDimensions'
-import { fadeInHeader } from '~/helpers/animation'
 
 /*
  * TODO:
@@ -87,7 +86,6 @@ const HeaderLinkContainer = styled.div`
     padding-top: 1em;
     padding-bottom: 1em;
   }
-  animation: ${fadeInHeader} ease-in 500ms;
 `
 
 const NavLink = styled(Link)`
