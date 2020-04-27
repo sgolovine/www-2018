@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { GrUserAdmin } from 'react-icons/gr'
 
 const contactInfoQuery = graphql`
   query {
