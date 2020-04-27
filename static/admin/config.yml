@@ -165,5 +165,12 @@ collections:
                     options: ["external", "internal"],
                     default: "internal",
                   },
+                  {
+                    label: "Enabled in Production?",
+                    name: "enabled",
+                    widget: "select",
+                    options: ["false", "true"],
+                    default: "false",
+                  },
                 ],
             }
