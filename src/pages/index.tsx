@@ -1,34 +1,21 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import marked from 'marked'
 import { HTMLParagraph } from '~/components/Paragraph'
+import { useHomePageData } from '~/hooks/graphql/pages/useHomePageData'
 
-const query = graphql`
-  query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/pages/index.md/g" } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          pageContent
-        }
-      }
-    }
-  }
-`
+type PageProps = {
+  title: string
+  htmlContent: string
+}
+
+export const Page = (props: PageProps) => (
+  <>
+    <h1>{props.title}</h1>
+    <HTMLParagraph>{props.htmlContent}</HTMLParagraph>
+  </>
+)
 
 export default () => {
-  const data = useStaticQuery(query)
+  const { title, htmlContent } = useHomePageData()
 
-  const { title, pageContent } = data?.allMarkdownRemark?.nodes[0]?.frontmatter
-
-  const htmlContent = marked(pageContent)
-
-  return (
-    <>
-      <h1>{title}</h1>
-      <HTMLParagraph>{htmlContent}</HTMLParagraph>
-    </>
-  )
+  return <Page title={title} htmlContent={htmlContent} />
 }
