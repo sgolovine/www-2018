@@ -3,7 +3,7 @@ headerLinks:
   - linkType: internal
     enabled: "true"
     linkName: Home
-    linkHref: /home
+    linkHref: /
     linkAlt: home
   - linkType: internal
     enabled: "true"
@@ -11,7 +11,7 @@ headerLinks:
     linkHref: /about
     linkAlt: about
   - linkType: external
-    enabled: "false"
+    enabled: "true"
     linkName: Resume
     linkHref: https://resume.glvn.co
     linkAlt: resume
