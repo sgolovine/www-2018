@@ -11,7 +11,7 @@ headerLinks:
     linkHref: /about
     linkAlt: about
   - linkType: external
-    enabled: "true"
+    enabled: "false"
     linkName: Resume
     linkHref: https://resume.glvn.co
     linkAlt: resume
