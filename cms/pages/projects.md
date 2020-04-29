@@ -1,6 +1,7 @@
 ---
 title: Projects
-pageContent: Check out some cool projects I've worked on and client work I did. You can find more of my projects on my [Github
+pageContent: Check out some cool projects I've worked on and client work I did.
+  You can find more of my projects on my [Github
   Page](https://github.com/sgolovine)
 projectList:
   - projectName: Fav Bookmark Manager
@@ -19,13 +20,13 @@ projectList:
       - linkName: Website
         linkHref: https://tiptrack.app
       - linkName: App Store
-        linkHref: "#"
+        linkHref: https://apps.apple.com/us/app/tiptrack/id1495916444
       - linkName: Google Play Store
-        linkHref: "#"
+        linkHref: https://play.google.com/store/apps/details?id=com.glvn.tiptrack
   - projectName: CopyBin
     projectDesc: React Native app. Lets you quickly Copy and Paste Canned Responses.
       Avaliable on Google Play
     projectLinks:
       - linkName: Google Play
-        linkHref: "#"
+        linkHref: https://play.google.com/store/apps/details?id=com.glvn.copybin
 ---
