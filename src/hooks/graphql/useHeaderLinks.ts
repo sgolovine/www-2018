@@ -1,5 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
+export type HeaderLink = {
+  name: string
+  href: string
+  alt: string
+  external: boolean
+}
+
 const query = graphql`
   {
     allMarkdownRemark(
@@ -20,30 +27,37 @@ const query = graphql`
   }
 `
 
-export const useHeaderLinks = (): {
-  name: string
-  href: string
-  alt: string
-  external: boolean
-}[] => {
+export const useHeaderLinks = (): HeaderLink[] => {
   const data = useStaticQuery(query)
   const { headerLinks } = data?.allMarkdownRemark?.nodes[0]?.frontmatter
   // console.log(headerLinks)
 
-  const filterProductionLinks = headerLinks.reduce((acc, item) => {
-    if (/^true$/.test(item.enabled)) {
-      return [
-        ...acc,
-        {
-          name: item.linkName,
-          href: item.linkHref,
-          alt: item.linkAlt,
-          external: /^external$/.test(item.linkType),
-        },
-      ]
-    }
-    return acc
-  }, [])
+  const filterProductionLinks = headerLinks.reduce(
+    (
+      acc: HeaderLink[],
+      item: {
+        linkName: string
+        linkHref: string
+        linkAlt: string
+        linkType: 'internal' | 'external'
+        enabled: 'true' | 'false'
+      }
+    ) => {
+      if (/^true$/.test(item.enabled)) {
+        return [
+          ...acc,
+          {
+            name: item.linkName,
+            href: item.linkHref,
+            alt: item.linkAlt,
+            external: /^external$/.test(item.linkType),
+          },
+        ]
+      }
+      return acc
+    },
+    []
+  )
 
   return filterProductionLinks
 }

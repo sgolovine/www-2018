@@ -46,7 +46,7 @@ export const Nav = () => {
   return (
     <NavContainer>
       <HeaderLinkContainer>
-        {showMobileMenu ? <MobileNav /> : renderLinks()}
+        {showMobileMenu ? <MobileNav headerLinks={data} /> : renderLinks()}
       </HeaderLinkContainer>
     </NavContainer>
   )
