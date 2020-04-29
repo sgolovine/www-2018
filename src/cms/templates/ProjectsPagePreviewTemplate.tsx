@@ -6,6 +6,8 @@ export default ({ entry }: { entry: any }) => {
   const htmlContent = entry.getIn(['data', 'pageContent'])
   const projectList = entry.getIn(['data', 'projectList'])
 
+  console.log(title, htmlContent, projectList)
+
   return (
     <Page title={title} htmlContent={htmlContent} projectList={projectList} />
   )

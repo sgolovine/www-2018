@@ -15,14 +15,16 @@ type PageProps = {
 
 export const Page = (props: PageProps) => {
   const { title, htmlContent, projectList } = props
+
   const renderList = () =>
     projectList.map((item: ProjectItem, index: number) => {
       return (
         <ProjectListItem key={index}>
           <h3>{item.projectName}</h3>
           <p>{item.projectDesc}</p>
-          <>
-            {item.projectLinks.map(
+          {item.projectLinks &&
+            item.projectLinks.length > 0 &&
+            item.projectLinks.map(
               (projectLinkItem: LinkItem, index: number) => {
                 return (
                   <ProjectLink
@@ -36,7 +38,6 @@ export const Page = (props: PageProps) => {
                 )
               }
             )}
-          </>
         </ProjectListItem>
       )
     })
@@ -45,7 +46,9 @@ export const Page = (props: PageProps) => {
     <>
       <h1>{title}</h1>
       <HTMLParagraph>{htmlContent}</HTMLParagraph>
-      <ProjectList>{renderList()}</ProjectList>
+      {projectList && projectList.length > 0 && (
+        <ProjectList>{renderList()}</ProjectList>
+      )}
     </>
   )
 }
