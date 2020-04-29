@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import marked from 'marked'
+import { LinkItem } from '~/types/links'
 
 const pageDataQuery = graphql`
   query {
@@ -10,6 +11,10 @@ const pageDataQuery = graphql`
         frontmatter {
           title
           pageContent
+          links {
+            linkName
+            linkHref
+          }
         }
       }
     }
@@ -19,11 +24,13 @@ const pageDataQuery = graphql`
 export const useLinksPageData = (): {
   title: string
   htmlContent: string
+  links: LinkItem[]
 } => {
   const pageData = useStaticQuery(pageDataQuery)
   const {
     title,
     pageContent,
+    links,
   } = pageData?.allMarkdownRemark?.nodes[0]?.frontmatter
 
   const htmlContent = marked(pageContent)
@@ -31,5 +38,6 @@ export const useLinksPageData = (): {
   return {
     title,
     htmlContent,
+    links,
   }
 }

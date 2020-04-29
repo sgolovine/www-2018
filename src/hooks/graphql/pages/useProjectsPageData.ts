@@ -1,15 +1,11 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import marked from 'marked'
+import { LinkItem } from '~/types/links'
 
 export type ProjectItem = {
   projectName: string
   projectDesc: string
   projectLinks: LinkItem[]
-}
-
-export type LinkItem = {
-  linkName: string
-  linkHref: string
 }
 
 const pageDataQuery = graphql`

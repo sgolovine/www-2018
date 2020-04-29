@@ -3,17 +3,19 @@ import { HTMLParagraph } from '~/components/Paragraph'
 import { useLinksPageData } from '~/hooks/graphql/pages/useLinksPageData'
 import { useContactInfo, ContactInfo } from '~/hooks/graphql/useContactInfo'
 import styled from 'styled-components'
+import { LinkItem } from '~/types/links'
 
 type PageProps = {
   title: string
   htmlContent: string
   contactInfo: ContactInfo
+  links: LinkItem[]
 }
 
 const LinksList = (props: ContactInfo) => {
   const { email, instagram, dev, github, linkedin, medium } = props
   return (
-    <LinksContainer>
+    <>
       <Link target="_blank" rel="noopener noreferrer" href={email.link}>
         Email - {email.username}
       </Link>
@@ -32,26 +34,57 @@ const LinksList = (props: ContactInfo) => {
       <Link target="_blank" rel="noopener noreferrer" href={medium.link}>
         Medium - {medium.username}
       </Link>
-    </LinksContainer>
+    </>
   )
 }
 
+const AdditionalLinks = ({ links }: { links: LinkItem[] }) => (
+  <>
+    {links.map((link, index) => (
+      <Link
+        key={index}
+        target="_blank"
+        rel="noopener noreferrer"
+        href={link.linkHref}
+      >
+        {link.linkName}
+      </Link>
+    ))}
+  </>
+)
+
 export const Page = (props: PageProps) => {
+  const { title, htmlContent, contactInfo, links } = props
   return (
     <>
-      <h1>{props.title}</h1>
-      <HTMLParagraph>{props.htmlContent}</HTMLParagraph>
-      <LinksList {...props.contactInfo} />
+      <h1>{title}</h1>
+      <HTMLParagraph>{htmlContent}</HTMLParagraph>
+      <LinksContainer>
+        <LinksList
+          email={contactInfo.email}
+          instagram={contactInfo.instagram}
+          dev={contactInfo.dev}
+          github={contactInfo.github}
+          linkedin={contactInfo.linkedin}
+          medium={contactInfo.medium}
+        />
+        <AdditionalLinks links={links} />
+      </LinksContainer>
     </>
   )
 }
 
 export default () => {
-  const { title, htmlContent } = useLinksPageData()
+  const { title, htmlContent, links } = useLinksPageData()
   const contactInfo = useContactInfo()
 
   return (
-    <Page title={title} htmlContent={htmlContent} contactInfo={contactInfo} />
+    <Page
+      title={title}
+      htmlContent={htmlContent}
+      contactInfo={contactInfo}
+      links={links}
+    />
   )
 }
 
