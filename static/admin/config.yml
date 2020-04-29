@@ -2,7 +2,7 @@ backend:
   # Change this to 'test-repo' if
   # doing any testing in development
   # otherwise leave it as 'git-gateway'
-  name: test-repo
+  name: git-gateway
   branch: master
 
 media_folder: static/assets
