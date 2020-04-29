@@ -131,6 +131,16 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Top Content", name: "pageContent", widget: "markdown" }
+          - {
+              label: "Additional Links",
+              name: "links",
+              widget: "list",
+              fields:
+                [
+                  { label: "Link Name", name: "linkName", widget: string },
+                  { label: "Link URL", name: "linkHref", widget: "string" },
+                ],
+            }
 
   - name: "components"
     label: "Components"
