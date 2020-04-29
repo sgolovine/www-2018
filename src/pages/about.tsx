@@ -2,7 +2,7 @@ import React from 'react'
 import { HTMLParagraph } from '~/components/Paragraph'
 import { useAboutPageData } from '~/hooks/graphql/pages/useAboutPageData'
 
-type PageProps = {
+export type PageProps = {
   title: string
   htmlContent: string
 }
