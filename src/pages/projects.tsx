@@ -4,8 +4,8 @@ import { HTMLParagraph } from '~/components/Paragraph'
 import {
   useProjectPageData,
   ProjectItem,
-  LinkItem,
 } from '~/hooks/graphql/pages/useProjectsPageData'
+import { LinkItem } from '~/types/links'
 
 type PageProps = {
   title: string

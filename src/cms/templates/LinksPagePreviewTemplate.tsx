@@ -5,6 +5,7 @@ import { ContactInfo } from '~/hooks/graphql/useContactInfo'
 export default ({ entry }: { entry: any }) => {
   const title = entry.getIn(['data', 'title'])
   const htmlContent = entry.getIn(['data', 'pageContent'])
+  const links = entry.getIn(['data', 'links'])
 
   const previewContactInfo: ContactInfo = {
     email: {
@@ -38,6 +39,7 @@ export default ({ entry }: { entry: any }) => {
       title={title}
       htmlContent={htmlContent}
       contactInfo={previewContactInfo}
+      links={links}
     />
   )
 }
