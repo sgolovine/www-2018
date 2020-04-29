@@ -31,7 +31,7 @@ headerLinks:
     linkHref: /links
     linkAlt: links
   - linkType: internal
-    enabled: "true"
+    enabled: "false"
     linkName: Blog
     linkHref: /blog
     linkAlt: blog
