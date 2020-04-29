@@ -20,8 +20,6 @@ type Props = {
 const BlogLayout = (props: Props) => {
   const { frontmatter, html } = props.data.markdownRemark
 
-  console.log(frontmatter, html)
-
   return (
     <>
       <h1>{frontmatter.title}</h1>

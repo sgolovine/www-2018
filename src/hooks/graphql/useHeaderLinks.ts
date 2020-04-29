@@ -30,7 +30,6 @@ const query = graphql`
 export const useHeaderLinks = (): HeaderLink[] => {
   const data = useStaticQuery(query)
   const { headerLinks } = data?.allMarkdownRemark?.nodes[0]?.frontmatter
-  // console.log(headerLinks)
 
   const filterProductionLinks = headerLinks.reduce(
     (
