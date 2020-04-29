@@ -41,7 +41,7 @@ collections:
               default: "home-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "PageContent", name: "pageContent", widget: "markdown" }
+          - { label: "Page Content", name: "pageContent", widget: "markdown" }
 
       - file: cms/pages/about.md
         label: "About Page"
@@ -54,7 +54,7 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "PageContent", name: "pageContent", widget: "markdown" }
+          - { label: "Page Content", name: "pageContent", widget: "markdown" }
 
       - file: cms/pages/projects.md
         label: "Projects Page"
@@ -67,7 +67,7 @@ collections:
               default: "projects-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Top Content", name: "topContent", widget: "markdown" }
+          - { label: "Page Content", name: "pageContent", widget: "markdown" }
           - {
               label: "Projects",
               name: projectList,
@@ -104,7 +104,6 @@ collections:
                   },
                 ],
             }
-          - { label: "Bottom Text", name: "bottomContent", widget: "markdown" }
 
       - file: cms/pages/contact.md
         label: "Contact Page"
