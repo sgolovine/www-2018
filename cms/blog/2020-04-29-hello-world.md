@@ -2,9 +2,6 @@
 templateKey: blog-post
 title: Hello World
 date: 2020-04-29T15:02:24.912Z
-description: Lets write our first blog post!
-tags:
-  - test
 ---
 This is the content of the blog post.
 
