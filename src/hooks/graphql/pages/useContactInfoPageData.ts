@@ -16,7 +16,10 @@ const pageDataQuery = graphql`
   }
 `
 
-export const useContactInfoPageData = () => {
+export const useContactInfoPageData = (): {
+  title: string
+  htmlContent: string
+} => {
   const pageData = useStaticQuery(pageDataQuery)
   const {
     title,

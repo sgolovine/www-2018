@@ -1,5 +1,19 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
+type ContactItem = {
+  link: string
+  username: string
+}
+
+export type ContactInfo = {
+  email: ContactItem
+  instagram: ContactItem
+  dev: ContactItem
+  github: ContactItem
+  linkedin: ContactItem
+  medium: ContactItem
+}
+
 const contactInfoQuery = graphql`
   query {
     allMarkdownRemark(
@@ -19,7 +33,7 @@ const contactInfoQuery = graphql`
   }
 `
 
-export const useContactInfo = () => {
+export const useContactInfo = (): ContactInfo => {
   const contactData = useStaticQuery(contactInfoQuery)
   const {
     email,

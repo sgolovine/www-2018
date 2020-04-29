@@ -1,49 +1,14 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { HTMLParagraph } from '~/components/Paragraph'
-
-const query = graphql`
-  query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/pages/projects.md/g" } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          topContent
-          projectList {
-            projectName
-            projectDesc
-            projectLinks {
-              linkHref
-              linkName
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-type ProjectItem = {
-  projectName: string
-  projectDesc: string
-  projectLinks: LinkItem[]
-}
-
-type LinkItem = {
-  linkName: string
-  linkHref: string
-}
+import {
+  useProjectPageData,
+  ProjectItem,
+  LinkItem,
+} from '~/hooks/graphql/pages/useProjectsPageData'
 
 export default () => {
-  const data = useStaticQuery(query)
-  const {
-    title,
-    topContent,
-    projectList,
-  } = data.allMarkdownRemark.nodes[0].frontmatter
+  const { title, htmlContent, projectList } = useProjectPageData()
 
   const renderList = () =>
     projectList.map((item: ProjectItem, index: number) => {
@@ -74,7 +39,7 @@ export default () => {
   return (
     <>
       <h1>{title}</h1>
-      <HTMLParagraph>{topContent}</HTMLParagraph>
+      <HTMLParagraph>{htmlContent}</HTMLParagraph>
       <ProjectList>{renderList()}</ProjectList>
     </>
   )

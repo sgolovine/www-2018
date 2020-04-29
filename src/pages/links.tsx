@@ -1,10 +1,8 @@
 import React from 'react'
 import { HTMLParagraph } from '~/components/Paragraph'
 import { useLinksPageData } from '~/hooks/graphql/pages/useLinksPageData'
-import { useContactInfo } from '~/hooks/graphql/useContactInfo'
+import { useContactInfo, ContactInfo } from '~/hooks/graphql/useContactInfo'
 import styled from 'styled-components'
-
-type ContactInfo = ReturnType<typeof useContactInfo>
 
 type PageProps = {
   title: string

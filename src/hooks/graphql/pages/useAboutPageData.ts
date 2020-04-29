@@ -16,7 +16,10 @@ const pageDataQuery = graphql`
   }
 `
 
-export const useAboutPageData = () => {
+export const useAboutPageData = (): {
+  title: string
+  htmlContent: string
+} => {
   const pageData = useStaticQuery(pageDataQuery)
   const {
     title,
