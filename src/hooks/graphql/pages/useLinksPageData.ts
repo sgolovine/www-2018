@@ -9,7 +9,7 @@ const pageDataQuery = graphql`
       nodes {
         frontmatter {
           title
-          topContent
+          pageContent
         }
       }
     }
@@ -23,10 +23,10 @@ export const useLinksPageData = (): {
   const pageData = useStaticQuery(pageDataQuery)
   const {
     title,
-    topContent,
+    pageContent,
   } = pageData?.allMarkdownRemark?.nodes[0]?.frontmatter
 
-  const htmlContent = marked(topContent)
+  const htmlContent = marked(pageContent)
 
   return {
     title,

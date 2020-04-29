@@ -1,6 +1,7 @@
 ---
 title: Projects
-topContent: Check out some cool projects I've worked on and client work I did.
+pageContent: Check out some cool projects I've worked on and client work I did. You can find more of my projects on my [Github
+  Page](https://github.com/sgolovine)
 projectList:
   - projectName: Fav Bookmark Manager
     projectDesc: Open source alternative bookmark manager for Firefox, Chrome and
@@ -27,6 +28,4 @@ projectList:
     projectLinks:
       - linkName: Google Play
         linkHref: "#"
-bottomContent: You can find more of my projects on my [Github
-  Page](https://github.com/sgolovine)
 ---

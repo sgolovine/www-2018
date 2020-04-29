@@ -7,9 +7,14 @@ import {
   LinkItem,
 } from '~/hooks/graphql/pages/useProjectsPageData'
 
-export default () => {
-  const { title, htmlContent, projectList } = useProjectPageData()
+type PageProps = {
+  title: string
+  htmlContent: string
+  projectList: ProjectItem[]
+}
 
+export const Page = (props: PageProps) => {
+  const { title, htmlContent, projectList } = props
   const renderList = () =>
     projectList.map((item: ProjectItem, index: number) => {
       return (
@@ -42,6 +47,14 @@ export default () => {
       <HTMLParagraph>{htmlContent}</HTMLParagraph>
       <ProjectList>{renderList()}</ProjectList>
     </>
+  )
+}
+
+export default () => {
+  const { title, htmlContent, projectList } = useProjectPageData()
+
+  return (
+    <Page title={title} htmlContent={htmlContent} projectList={projectList} />
   )
 }
 

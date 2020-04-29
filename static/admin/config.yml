@@ -1,4 +1,7 @@
 backend:
+  # Change this to 'test-repo' if
+  # doing any testing in development
+  # otherwise leave it as 'git-gateway'
   name: test-repo
   branch: master
 
@@ -8,6 +11,24 @@ public_folder: /assets
 display_url: https://glvn.co
 
 collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "cms/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
   - name: "pages"
     label: "Pages"
     files:
@@ -98,7 +119,7 @@ collections:
               default: "contact-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Top Content", name: "topContent", widget: "markdown" }
+          - { label: "Top Content", name: "pageContent", widget: "markdown" }
 
       - file: cms/pages/links.md
         label: "Links Page"
@@ -111,7 +132,7 @@ collections:
               default: "links-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Top Content", name: "topContent", widget: "markdown" }
+          - { label: "Top Content", name: "pageContent", widget: "markdown" }
 
   - name: "components"
     label: "Components"
