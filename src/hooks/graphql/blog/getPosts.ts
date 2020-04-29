@@ -1,7 +1,5 @@
 /** This will fetch all posts */
-import { graphql } from 'gatsby'
-
-export const pageDataQuery = graphql`
+export const pageDataQuery = `
   query {
     allMarkdownRemark(
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
