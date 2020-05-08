@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { MobileNav } from './MobileNav'
-import { useWindowDimensions } from '~/hooks/useWindowDimensions'
 import { useHeaderLinks } from '~/hooks/graphql/useHeaderLinks'
+import Media from 'react-media'
 
 export const Nav = () => {
-  const windowDimensions = useWindowDimensions()
+  // Width < 900px shows mobile nav
 
   const data = useHeaderLinks()
-
-  const [showMobileMenu, setShowMobileMenu] = useState(
-    windowDimensions.width < 900 ? true : false
-  )
-
-  useEffect(() => {
-    if (windowDimensions.width < 900) {
-      setShowMobileMenu(true)
-    } else {
-      setShowMobileMenu(false)
-    }
-  }, [windowDimensions])
 
   const renderLinks = () =>
     data.map((link, index) => {
@@ -46,7 +34,21 @@ export const Nav = () => {
   return (
     <NavContainer>
       <HeaderLinkContainer>
-        {showMobileMenu ? <MobileNav headerLinks={data} /> : renderLinks()}
+        <Media
+          queries={{
+            mobile: '(max-width: 900px)',
+          }}
+        >
+          {(matches) => (
+            <>
+              {matches.mobile ? (
+                <MobileNav headerLinks={data} />
+              ) : (
+                renderLinks()
+              )}
+            </>
+          )}
+        </Media>
       </HeaderLinkContainer>
     </NavContainer>
   )
