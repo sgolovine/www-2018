@@ -9,7 +9,7 @@ type ContactArgs = {
 const BASE_URL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:9000'
-    : 'https://dev.glvn.co'
+    : 'https://glvn.co'
 
 const URL = `${BASE_URL}/.netlify/functions/send-email`
 

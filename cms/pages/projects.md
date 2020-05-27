@@ -4,6 +4,13 @@ pageContent: Check out some cool projects I've worked on and client work I did.
   You can find more of my projects on my [Github
   Page](https://github.com/sgolovine)
 projectList:
+  - projectName: Webhost Watchdog
+    projectDesc: A webhosting review site that tries to cut through the marketing
+      fluff and give readers accurate, concice and to the point reviews and
+      comparisons of webhosting products.
+    projectLinks:
+      - linkName: Website
+        linkHref: https://webhostwatchdog.com
   - projectName: Fav Bookmark Manager
     projectDesc: Open source alternative bookmark manager for Firefox, Chrome and
       other Chromium browsers. Syncronizes with Github Gist API. Built with
