@@ -68,5 +68,11 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.ts`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`.
+      options: {
+        trackingId: 'UA-166839958-2'
+      }
+    }
   ],
 }
