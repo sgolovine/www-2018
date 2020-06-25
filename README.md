@@ -2,6 +2,9 @@
 
 Personal Website for Sunny Golovine
 
+
+## Mockup
+
 ![mockups](/mockup.png)
 
 ## Installation
