@@ -71,19 +71,70 @@ const ProjectSection = () => (
 const ContactSection = () => {
   return (
     <ContactSectionContainer>
-      <SectionHeader>Reach Out</SectionHeader>
+      <SectionHeader>Get in Touch</SectionHeader>
       <Label htmlFor="name">Name</Label>
-      <Input name="name" />
+      <Input name="name" placeholder="John Doe" />
 
       <Label htmlFor="email">Email</Label>
-      <Input name="email" />
+      <Input name="email" placeholder="john.doe@acme.com" />
 
       <Label htmlFor="message">Message</Label>
-      <TextArea name="message" />
+      <TextArea
+        name="message"
+        placeholder="Hey Mate! I have this really cool idea I want to discuss..."
+      />
       <div>
         <Button>Send</Button>
       </div>
     </ContactSectionContainer>
+  )
+}
+
+const LinksSection = () => {
+  return (
+    <Section>
+      <SectionHeader>Find me Elsewhere</SectionHeader>
+      <LinksContainer>
+        <table>
+          <tr>
+            <td>Email</td>
+            <td>
+              <a href="mailto:sunny@glvn.co">sunny@glvn.co</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td>
+              <a href="https://instagram.com/sgolovine">sgolovine</a>
+            </td>
+          </tr>
+          <tr>
+            <td>The Practical Dev</td>
+            <td>
+              <a href="https://dev.to/sgolovine">sgolovine</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Github</td>
+            <td>
+              <a href="https://github.com/sgolovine">sgolovine</a>
+            </td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td>
+              <a href="https://linkedin.com/in/SunnyGolovine">SunnyGolovine</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Resume</td>
+            <td>
+              <a href="https://resume.glvn.co">Link</a>
+            </td>
+          </tr>
+        </table>
+      </LinksContainer>
+    </Section>
   )
 }
 
@@ -97,6 +148,7 @@ export default () => {
       </p>
       <AboutSection />
       <ProjectSection />
+      <LinksSection />
       <ContactSection />
     </>
   )
@@ -124,4 +176,9 @@ const ContactSectionContainer = styled(Section)`
   div {
     margin-top: 1rem;
   }
+`
+
+const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `

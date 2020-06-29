@@ -1,13 +1,14 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import GlobalStyle from './GlobalStyle'
-// import 'normalize.css'
+import Footer from './Footer'
 
 export default ({ children }: { children: ReactNode }) => (
   <>
     <GlobalStyle />
     <Container>
       <ContentContainer>{children}</ContentContainer>
+      <Footer />
     </Container>
   </>
 )

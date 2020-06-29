@@ -13,8 +13,9 @@ export const Input = styled.input`
   box-shadow: none;
   height: 50px;
   padding: 5px;
-  border-color: #333;
-  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  background-color: #ecf0f1;
   font-size: 18px;
   font-weight: bold;
 `
@@ -30,8 +31,9 @@ export const TextArea = styled.textarea.attrs({
   box-shadow: none;
   height: 50px;
   padding: 5px;
-  border-color: #333;
-  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  background-color: #ecf0f1;
   font-size: 18px;
   font-weight: bold;
   height: 250px;
@@ -39,11 +41,14 @@ export const TextArea = styled.textarea.attrs({
 
 export const Button = styled.button`
   width: 150px;
-  background-color: #fff;
-  border: 3px solid;
+  background-color: #ecf0f1;
+  border: 3px solid #fff;
   border-radius: 7.5px;
   font-size: 18px;
   font-weight: bold;
+  :hover {
+    border: 3px solid #333;
+  }
   :active {
     background-color: #333;
     color: #fff;
