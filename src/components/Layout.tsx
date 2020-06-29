@@ -1,11 +1,15 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
+import GlobalStyle from './GlobalStyle'
 // import 'normalize.css'
 
 export default ({ children }: { children: ReactNode }) => (
-  <Container>
-    <ContentContainer>{children}</ContentContainer>
-  </Container>
+  <>
+    <GlobalStyle />
+    <Container>
+      <ContentContainer>{children}</ContentContainer>
+    </Container>
+  </>
 )
 
 const Container = styled.div``
