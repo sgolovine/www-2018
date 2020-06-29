@@ -52,7 +52,7 @@
     "typecheck": "tsc",
     "ci": "yarn typecheck && yarn lint && yarn prettier",
     "cleanup": "rm -rf .cache node_modules public",
-    "clean": "rm -rf .cache public",
+    "clean": "gatsby clean",
     "serve": "serve -s public",
     "prod": "yarn build && yarn serve"
   }
