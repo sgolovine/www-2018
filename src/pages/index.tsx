@@ -2,7 +2,6 @@ import React from 'react'
 import Heading from '~/components/Heading'
 import AboutSection from '~/components/index/About'
 import ProjectSection from '~/components/index/Projects'
-import ContactForm from '~/components/index/ContactForm'
 import LinksSection from '~/components/index/Links'
 
 export default () => {
@@ -16,7 +15,6 @@ export default () => {
       <AboutSection />
       <ProjectSection />
       <LinksSection />
-      <ContactForm />
     </>
   )
 }
