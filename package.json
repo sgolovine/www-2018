@@ -11,7 +11,8 @@
     "gatsby-source-filesystem": "^2.2.4",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "babel-preset-gatsby": "^0.4.0"
