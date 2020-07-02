@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default () => (
+const Heading = () => (
   <>
     <h1>Hi! My name is Sunny!</h1>
     <p>
       I'm a web developer living in Atlanta, GA. I specialize in building
       websites and mobile apps using React.
     </p>
-    <hr />
+  </>
+)
+
+const About = () => (
+  <>
     <h2>About Me</h2>
     <p>
       Originally from Ekteteriburg, Russia. I came to the United States in 2000
@@ -16,7 +20,11 @@ export default () => (
       Engineer, specializing in React and React Native. Check out some of my
       side projects of things I worked on professionally below.
     </p>
-    <hr />
+  </>
+)
+
+const Projects = () => (
+  <>
     <h2>Side Projects</h2>
     <p>
       Some of my side projects. You can find all my code on my&nbsp;
@@ -39,13 +47,11 @@ export default () => (
       that syncs with Github Gist. Backup, collect, publish and share you
       bookmarks all while staying in control of your data.
     </p>
-    <hr />
-    <h2>Reach Out</h2>
-    <p>
-      If you want to get in touch the best way is to drop me an email at:{' '}
-      <a href="mailto:sunny@glvn.co">sunny@glvn.co</a>
-    </p>
-    <hr />
+  </>
+)
+
+const ReachOut = () => (
+  <>
     <h2>Find me Elsewhere</h2>
     <LinkContainer>
       <a href="https://github.com/sgolovine">Github (sgolovine)</a>
@@ -56,6 +62,18 @@ export default () => (
       </a>
       <a href="https://resume.glvn.co">Resume</a>
     </LinkContainer>
+  </>
+)
+
+export default () => (
+  <>
+    <Heading />
+    <hr />
+    <About />
+    <hr />
+    <Projects />
+    <hr />
+    <ReachOut />
   </>
 )
 

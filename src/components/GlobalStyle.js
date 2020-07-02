@@ -2,16 +2,16 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   h1 {
-    font-size: 42px;
+    font-size: 48px;
   }
   h2 {
-    font-size: 32px;
+    font-size: 42px;
   }
   h3 {
-    font-size: 28px;
+    font-size: 32px;
   }
   h4 {
-    font-size: 20px;
+    font-size: 24px;
   }
   a, p {
     font-size: 18px;
