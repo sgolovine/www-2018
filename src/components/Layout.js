@@ -1,13 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import 'normalize.css'
-import { GlobalStyle } from './GlobalStyle'
+import { GlobalStyle, LightTheme, DarkTheme } from './GlobalStyle'
+import { Header } from './Header'
 
 export const Layout = ({ children }) => (
-  <SiteContainer>
+  <>
     <GlobalStyle />
-    {children}
-  </SiteContainer>
+    <LightTheme />
+    {/* <DarkTheme /> */}
+    <SiteContainer>
+      <Header />
+      {children}
+    </SiteContainer>
+  </>
 )
 
 const SiteContainer = styled.div`
