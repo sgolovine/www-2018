@@ -4,5 +4,14 @@ module.exports = {
     description: `Website for Sunny Golovine`,
     author: `Sunny Golovine`,
   },
-  plugins: [],
+  plugins: [
+    {
+      source: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/posts`,
+      },
+    },
+    `gatsby=transformer-remark`,
+  ],
 }

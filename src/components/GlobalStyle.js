@@ -3,6 +3,9 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: 3.5rem;
+    @media(max-width: 1000px) {
+      font-size: 3rem;
+    }
   }
   h2 {
     font-size: 2.5rem;

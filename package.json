@@ -8,7 +8,8 @@
   "homepage": "https://glvn.co",
   "dependencies": {
     "gatsby": "^2.20.29",
-    "gatsby-source-filesystem": "^2.2.4",
+    "gatsby-source-filesystem": "^2.3.18",
+    "gatsby-transformer-remark": "^2.8.23",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
