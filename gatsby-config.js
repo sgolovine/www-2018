@@ -6,12 +6,12 @@ module.exports = {
   },
   plugins: [
     {
-      source: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
         path: `${__dirname}/posts`,
       },
     },
-    `gatsby=transformer-remark`,
+    `gatsby-transformer-remark`,
   ],
 }
