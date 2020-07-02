@@ -1,5 +1,40 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ProjectCard } from '../components/ProjectCard'
+
+const projects = [
+  {
+    title: 'Webhost Watchdog',
+    desc:
+      'Webhost Watchdog is a blog for comprehensive reviews of webhosting products. Reviews the most popular webhosting products form the top hosting companies in the market today',
+    links: [
+      {
+        title: 'Website',
+        href: 'https://webhostwatchdog.com',
+      },
+    ],
+  },
+  {
+    title: 'Fav Bookmark Manager',
+    desc:
+      'Fav Bookmark Manager (or simply fav.sh) is an open source bookmark manager extension for Chrome and Firefox that syncs with Github Gist. Backup, collect, publish and share you bookmarks all while staying in control of your data.',
+    links: [
+      { title: 'Chrome Web Store', href: '#' },
+      { title: 'Firefox Addon', href: '#' },
+      { title: 'Github', href: '#' },
+    ],
+  },
+  {
+    title: 'TipTrack',
+    desc:
+      'TipTrack is a tip tracking app for servers, bartenders and more. Lets users create custom analytics to track their earnings',
+    links: [
+      { title: 'App Store', href: '#' },
+      { title: 'Google Play Store', href: '#' },
+      { title: 'Website', href: '#' },
+    ],
+  },
+]
 
 const Heading = () => (
   <>
@@ -23,30 +58,16 @@ const About = () => (
   </>
 )
 
-const Projects = () => (
+const ProjectsSection = () => (
   <>
     <h2>Side Projects</h2>
-    <p>
-      Some of my side projects. You can find all my code on my&nbsp;
-      <a href="https://github.com/sgolovine">Github page</a>.
-    </p>
-    <h3>Webhost Watchdog</h3>
-    <p>
-      Webhost Watchdog is a blog for comprehensive reviews of webhosting
-      products. Reviews the most popular webhosting products form the top
-      hosting companies in the market today.
-    </p>
-    <h3>TipTrack</h3>
-    <p>
-      TipTrack is a tip tracking app for servers, bartenders and more. Lets
-      users create custom analytics to track their earnings
-    </p>
-    <h3>Fav Bookmark Manager</h3>
-    <p>
-      Fav Bookmark Manager (or simply fav.sh) is an open source bookmark manager
-      that syncs with Github Gist. Backup, collect, publish and share you
-      bookmarks all while staying in control of your data.
-    </p>
+    {projects.map((project) => (
+      <ProjectCard
+        title={project.title}
+        desc={project.desc}
+        links={project.links}
+      />
+    ))}
   </>
 )
 
@@ -71,7 +92,7 @@ export default () => (
     <hr />
     <About />
     <hr />
-    <Projects />
+    <ProjectsSection />
     <hr />
     <ReachOut />
   </>
@@ -80,4 +101,8 @@ export default () => (
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
+  a {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 `
