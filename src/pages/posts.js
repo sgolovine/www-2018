@@ -16,6 +16,7 @@ export default () => {
             frontmatter {
               slug
               title
+              date
             }
           }
         }
@@ -24,6 +25,7 @@ export default () => {
   `)
 
   const posts = data.allMarkdownRemark.edges
+
   return (
     <>
       <h1>/posts</h1>
@@ -34,7 +36,7 @@ export default () => {
               key={item.node.id}
               to={`/post/${item.node.frontmatter.slug}`}
             >
-              {item.node.frontmatter.title}
+              {`[ ${item.node.frontmatter.date} ] - ${item.node.frontmatter.title}`}
             </PostLink>
           )
         })}
