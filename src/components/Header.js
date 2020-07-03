@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <Container>
       <HeaderLink to="/">Home</HeaderLink>
-      <HeaderLink to="/blog">Blog</HeaderLink>
+      <HeaderLink to="/posts">Blog</HeaderLink>
     </Container>
   )
 }

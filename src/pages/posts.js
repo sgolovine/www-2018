@@ -26,7 +26,7 @@ export default () => {
   const posts = data.allMarkdownRemark.edges
   return (
     <>
-      <h1>/blog</h1>
+      <h1>/posts</h1>
       <PostContainer>
         {posts.map((item) => {
           return (
