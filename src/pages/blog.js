@@ -30,7 +30,10 @@ export default () => {
       <PostContainer>
         {posts.map((item) => {
           return (
-            <PostLink key={item.node.id} to={item.node.frontmatter.slug}>
+            <PostLink
+              key={item.node.id}
+              to={`/post/${item.node.frontmatter.slug}`}
+            >
               {item.node.frontmatter.title}
             </PostLink>
           )
