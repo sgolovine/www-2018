@@ -4,10 +4,12 @@ import styled from 'styled-components'
 
 export default ({ data }) => {
   const { frontmatter, html } = data.markdownRemark
+  const date = new Date(frontmatter.date)
+
   return (
     <>
       <Header>{frontmatter.title}</Header>
-      <Detail>Posted {frontmatter.date}</Detail>
+      <Detail>Posted: {date.toDateString()}</Detail>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </>
   )
@@ -18,6 +20,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $articleId }) {
       frontmatter {
         title
+        date
       }
       html
     }

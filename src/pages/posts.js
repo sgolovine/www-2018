@@ -28,7 +28,11 @@ export default () => {
 
   return (
     <>
-      <h1>/posts</h1>
+      <h1>Blog</h1>
+      <p>
+        My Personal Blog. I write about Programming, Politics and other things
+        on my mind.
+      </p>
       <PostContainer>
         {posts.map((item) => {
           return (

@@ -19,9 +19,17 @@ const projects = [
     desc:
       'Fav Bookmark Manager (or simply fav.sh) is an open source bookmark manager extension for Chrome and Firefox that syncs with Github Gist. Backup, collect, publish and share you bookmarks all while staying in control of your data.',
     links: [
-      { title: 'Chrome Web Store', href: '#' },
-      { title: 'Firefox Addon', href: '#' },
-      { title: 'Github', href: '#' },
+      {
+        title: 'Chrome Web Store',
+        href:
+          'https://chrome.google.com/webstore/detail/fav-bookmark-manager/gammmbkeceiljlgijimbhhgkfmiejnkl',
+      },
+      {
+        title: 'Firefox Addon',
+        href: 'https://addons.mozilla.org/firefox/addon/fav/',
+      },
+      { title: 'Github', href: 'https://github.com/fav-sh' },
+      { title: 'Website', href: 'https://fav.sh' },
     ],
   },
   {
@@ -29,9 +37,25 @@ const projects = [
     desc:
       'TipTrack is a tip tracking app for servers, bartenders and more. Lets users create custom analytics to track their earnings',
     links: [
-      { title: 'App Store', href: '#' },
-      { title: 'Google Play Store', href: '#' },
-      { title: 'Website', href: '#' },
+      {
+        title: 'App Store',
+        href: 'https://apps.apple.com/us/app/tiptrack/id1495916444',
+      },
+      {
+        title: 'Google Play Store',
+        href: 'https://play.google.com/store/apps/details?id=com.glvn.tiptrack',
+      },
+      { title: 'Website', href: 'https://tiptrack.app/' },
+    ],
+  },
+  {
+    title: 'CopyBin',
+    desc: 'Android app for copying/pasting canned responses',
+    links: [
+      {
+        title: 'Google Play Store',
+        href: 'https://play.google.com/store/apps/details?id=com.glvn.copybin',
+      },
     ],
   },
 ]
