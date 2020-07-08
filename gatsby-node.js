@@ -1,56 +1,40 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ graphql, actions }) => {
-  const blogPostTemplate = path.resolve('./src/layout/BlogLayout.tsx')
+  const { createPage } = actions
 
-  const result = await graphql(`
+  const query = await graphql(`
     query {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        sort: { fields: frontmatter___date }
-        limit: 1000
-      ) {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
         edges {
           node {
-            fields {
+            id
+            frontmatter {
               slug
+              title
             }
+            html
           }
         }
       }
     }
   `)
 
-  if (result.errors) {
-    throw data.errors
+  if (query.errors) {
+    throw query.errors
   }
 
-  const posts = result.data.allMarkdownRemark.edges
+  const posts = query.data.allMarkdownRemark.edges
+
+  const template = path.resolve(__dirname, './src/postTemplate.js')
+
   posts.forEach((post) => {
-    actions.createPage({
-      path: path.join('blog', post.node.fields.slug),
-      component: blogPostTemplate,
+    createPage({
+      path: `/post/${post.node.frontmatter.slug}`,
+      component: template,
       context: {
-        slug: post.node.fields.slug,
+        articleId: post.node.id,
       },
     })
   })
-}
-
-/** This creates a "fields" object under allMarkdownRemark
- *  which holds the slug
- */
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
 }
