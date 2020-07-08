@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               slug
               title
+              published
             }
             html
           }
@@ -29,12 +30,14 @@ exports.createPages = async ({ graphql, actions }) => {
   const template = path.resolve(__dirname, './src/postTemplate.js')
 
   posts.forEach((post) => {
-    createPage({
-      path: `/post/${post.node.frontmatter.slug}`,
-      component: template,
-      context: {
-        articleId: post.node.id,
-      },
-    })
+    if (post.node.frontmatter.published) {
+      createPage({
+        path: `/post/${post.node.frontmatter.slug}`,
+        component: template,
+        context: {
+          articleId: post.node.id,
+        },
+      })
+    }
   })
 }

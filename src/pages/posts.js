@@ -17,6 +17,7 @@ export default () => {
               slug
               title
               date
+              published
             }
           }
         }
@@ -35,21 +36,26 @@ export default () => {
       </p>
       <PostContainer>
         {posts.map((item) => {
-          return (
-            <PostLink
-              key={item.node.id}
-              to={`/post/${item.node.frontmatter.slug}`}
-            >
-              {`[ ${item.node.frontmatter.date} ] - ${item.node.frontmatter.title}`}
-            </PostLink>
-          )
+          if (item.node.frontmatter.published) {
+            return (
+              <PostLink
+                key={item.node.id}
+                to={`/post/${item.node.frontmatter.slug}`}
+              >
+                {`[ ${item.node.frontmatter.date} ] - ${item.node.frontmatter.title}`}
+              </PostLink>
+            )
+          }
         })}
       </PostContainer>
     </>
   )
 }
 
-const PostContainer = styled.div``
+const PostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 const PostLink = styled(Link)`
   font-size: 24px;
