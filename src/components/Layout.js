@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import 'normalize.css'
 import { GlobalStyle } from './GlobalStyle'
-import { Header } from './Header'
+// import { Header } from './Header'
 
 export const Layout = ({ children }) => (
   <>
     <GlobalStyle />
     <SiteContainer>
-      <Header />
+      {/* <Header /> */}
       {children}
     </SiteContainer>
   </>
