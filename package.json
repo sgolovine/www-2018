@@ -8,6 +8,7 @@
   "homepage": "https://glvn.co",
   "dependencies": {
     "gatsby": "^2.24.89",
+    "gatsby-plugin-matomo": "^0.8.3",
     "gatsby-plugin-styled-components": "^3.3.14",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
