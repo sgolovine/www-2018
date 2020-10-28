@@ -7,6 +7,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `jsonData`,
+        path: `${__dirname}/static`,
+      },
+    },
+    `gatsby-transformer-json`,
+    {
       resolve: `gatsby-plugin-matomo`,
       options: {
         siteId: `2`,

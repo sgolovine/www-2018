@@ -1,78 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ProjectCard } from '../components/ProjectCard'
-
-const projects = [
-  {
-    title: 'Webhost Watchdog',
-    desc:
-      'Webhost Watchdog is a blog for comprehensive reviews of webhosting products. Reviews the most popular webhosting products form the top hosting companies in the market today',
-    links: [
-      {
-        title: 'Website',
-        href: 'https://webhostwatchdog.com',
-      },
-    ],
-  },
-  {
-    title: 'Fav Bookmark Manager',
-    desc:
-      'Fav Bookmark Manager (or simply fav.sh) is an open source bookmark manager extension for Chrome and Firefox that syncs with Github Gist. Backup, collect, publish and share you bookmarks all while staying in control of your data.',
-    links: [
-      {
-        title: 'Chrome Web Store',
-        href:
-          'https://chrome.google.com/webstore/detail/fav-bookmark-manager/gammmbkeceiljlgijimbhhgkfmiejnkl',
-      },
-      {
-        title: 'Firefox Addon',
-        href: 'https://addons.mozilla.org/firefox/addon/fav/',
-      },
-      { title: 'Source Code', href: 'https://github.com/fav-sh' },
-      { title: 'Website', href: 'https://fav.sh' },
-    ],
-  },
-  {
-    title: 'TipTrack',
-    desc:
-      'TipTrack is a tip tracking app for servers, bartenders and more. Lets users create custom analytics to track their earnings',
-    links: [
-      {
-        title: 'App Store',
-        href: 'https://apps.apple.com/us/app/tiptrack/id1495916444',
-      },
-      {
-        title: 'Google Play Store',
-        href: 'https://play.google.com/store/apps/details?id=com.glvn.tiptrack',
-      },
-      { title: 'Website', href: 'https://tiptrack.app/' },
-    ],
-  },
-  {
-    title: 'CopyBin',
-    desc: 'Android app for copying/pasting canned responses',
-    links: [
-      {
-        title: 'Google Play Store',
-        href: 'https://play.google.com/store/apps/details?id=com.glvn.copybin',
-      },
-    ],
-  },
-  {
-    title: 'sunny.gg',
-    desc: 'A linktree alternative built with Preact and Tailwind CSS',
-    links: [
-      {
-        title: 'Website',
-        href: 'https://sunny.sh',
-      },
-      {
-        title: 'Source Code',
-        href: 'https://github.com/sgolovine/sunny.gg',
-      },
-    ],
-  },
-]
+import { useLinks } from '../hooks/useLinks'
+import { useProjects } from '../hooks/useProjects'
 
 const Heading = () => (
   <>
@@ -96,38 +26,44 @@ const About = () => (
   </>
 )
 
-const ProjectsSection = () => (
-  <>
-    <h2>Side Projects</h2>
-    <p>
-      Some of my notable side projects that I've been working on recently. I've
-      worked on tons of other projecs that you can find on my{' '}
-      <a href="https://github.com/sgolovine">Github Page</a>
-    </p>
-    {projects.map((project) => (
-      <ProjectCard
-        title={project.title}
-        desc={project.desc}
-        links={project.links}
-      />
-    ))}
-  </>
-)
+const ProjectsSection = () => {
+  const projects = useProjects()
+  return (
+    <>
+      <h2>Side Projects</h2>
+      <p>
+        Some of my notable side projects that I've been working on recently.
+        I've worked on tons of other projecs that you can find on my{' '}
+        <a href="https://github.com/sgolovine">Github Page</a>
+      </p>
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.name}
+          desc={project.desc}
+          links={project.links}
+        />
+      ))}
+    </>
+  )
+}
 
-const ReachOut = () => (
-  <>
-    <h2>Find me Elsewhere</h2>
-    <LinkContainer>
-      <a href="https://github.com/sgolovine">Github (sgolovine)</a>
-      <a href="https://instagram.com/sgolovine">Instagram (sgolovine)</a>
-      <a href="https://dev.to/sgolovine">The Practical Dev (sgolovine)</a>
-      <a href="https://linkedin.com/in/SunnyGolovine">
-        Linkedin (SunnyGolovine)
-      </a>
-      <a href="https://resume.glvn.co">Resume</a>
-    </LinkContainer>
-  </>
-)
+const ReachOut = () => {
+  const links = useLinks()
+  return (
+    <>
+      <h2>Find me Elsewhere</h2>
+      <LinkContainer>
+        {links.map((link, index) => {
+          return (
+            <a key={index} href={link.href}>
+              {link.name}
+            </a>
+          )
+        })}
+      </LinkContainer>
+    </>
+  )
+}
 
 export default () => (
   <>

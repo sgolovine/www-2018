@@ -7,7 +7,7 @@ export const ProjectCard = ({ title, desc, links }) => (
     <ProjectText>{desc}</ProjectText>
     <ProjectLinksContainer>
       {links.map((link) => (
-        <ProjectLink href={link.href}>{link.title}</ProjectLink>
+        <ProjectLink href={link.href}>{link.name}</ProjectLink>
       ))}
     </ProjectLinksContainer>
   </ProjectContainer>
