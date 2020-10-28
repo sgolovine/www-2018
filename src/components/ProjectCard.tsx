@@ -1,7 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const ProjectCard = ({ title, desc, links }) => (
+type Props = {
+  title: string
+  desc: string
+  links: {
+    name: string
+    href: string
+  }[]
+}
+
+export const ProjectCard = ({ title, desc, links }: Props) => (
   <ProjectContainer>
     <ProjectHeader>{title}</ProjectHeader>
     <ProjectText>{desc}</ProjectText>

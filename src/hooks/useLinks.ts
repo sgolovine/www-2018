@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby'
+import { Links } from '../model/links'
 
-export const useLinks = () => {
+export const useLinks = (): Links => {
   const data = useStaticQuery(graphql`
     query {
       linksJson {
