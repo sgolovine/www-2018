@@ -19,7 +19,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const useProjects = () => {
   const data = useStaticQuery(graphql`
     query {
-      staticJson {
+      projectsJson {
         projects {
           name
           desc
@@ -31,5 +31,5 @@ export const useProjects = () => {
       }
     }
   `)
-  return data?.staticJson?.projects ?? []
+  return data?.projectsJson?.projects ?? []
 }

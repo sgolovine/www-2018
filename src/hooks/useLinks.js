@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const useLinks = () => {
   const data = useStaticQuery(graphql`
     query {
-      staticJson {
+      linksJson {
         links {
           name
           href
@@ -11,5 +11,5 @@ export const useLinks = () => {
       }
     }
   `)
-  return data?.staticJson?.links ?? []
+  return data?.linksJson?.links ?? []
 }
