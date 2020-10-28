@@ -1,6 +1,4 @@
 ### WWW
 
-Personal Website for Sunny Golovine
+My personal site
 
-
-[Project Specifications](spec.md)
