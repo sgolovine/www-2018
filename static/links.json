@@ -1,0 +1,28 @@
+{
+  "links": [
+    {
+      "name": "My Other Website",
+      "href": "https://sunny.gg"
+    },
+    {
+      "name": "Github",
+      "href": "https://github.com/sgolovine"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://instagram.com/sgolovine"
+    },
+    {
+      "name": "The Practical Dev (Dev.to)",
+      "href": "https://dev.to/sgolovine"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "https://linkedin.com/in/SunnyGolovine"
+    },
+    {
+      "name": "Resume",
+      "href": "https://resume.glvn.co"
+    }
+  ]
+}

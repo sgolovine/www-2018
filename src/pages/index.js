@@ -28,7 +28,7 @@ const projects = [
         title: 'Firefox Addon',
         href: 'https://addons.mozilla.org/firefox/addon/fav/',
       },
-      { title: 'Github', href: 'https://github.com/fav-sh' },
+      { title: 'Source Code', href: 'https://github.com/fav-sh' },
       { title: 'Website', href: 'https://fav.sh' },
     ],
   },
@@ -55,6 +55,20 @@ const projects = [
       {
         title: 'Google Play Store',
         href: 'https://play.google.com/store/apps/details?id=com.glvn.copybin',
+      },
+    ],
+  },
+  {
+    title: 'sunny.gg',
+    desc: 'A linktree alternative built with Preact and Tailwind CSS',
+    links: [
+      {
+        title: 'Website',
+        href: 'https://sunny.sh',
+      },
+      {
+        title: 'Source Code',
+        href: 'https://github.com/sgolovine/sunny.gg',
       },
     ],
   },
