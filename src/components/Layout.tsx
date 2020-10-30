@@ -1,22 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import 'normalize.css'
-import { GlobalStyle } from './GlobalStyle'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
 }
 
 export const Layout = ({ children }: Props) => (
-  <>
-    <GlobalStyle />
-    <SiteContainer>{children}</SiteContainer>
-  </>
+  <div className="max-w-screen">
+    <div className="container mx-auto">{children}</div>
+  </div>
 )
-
-const SiteContainer = styled.div`
-  padding: 1rem;
-  max-width: 800px;
-  margin: auto;
-`

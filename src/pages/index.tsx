@@ -1,12 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
+import { SectionContainer, SectionHeader } from '~/components/HomeSection'
 import { ProjectCard } from '../components/ProjectCard'
 import { useLinks } from '../hooks/useLinks'
 import { useProjects } from '../hooks/useProjects'
 
 const Heading = () => (
   <>
-    <h1>Hi! My name is Sunny!</h1>
+    <h1 className="text-5xl">Hi! My name is Sunny!</h1>
     <p>
       I'm a web developer living in Atlanta, GA. I specialize in building
       websites and mobile apps using React.
@@ -15,22 +15,22 @@ const Heading = () => (
 )
 
 const About = () => (
-  <>
-    <h2>About Me</h2>
+  <SectionContainer>
+    <SectionHeader>About Me</SectionHeader>
     <p>
       Originally from Ekteteriburg, Russia. I came to the United States in 2000
       and have since lived in Atlanta, GA. I currnetly work as a Software
       Engineer, specializing in React and React Native. Check out some of my
       side projects of things I worked on professionally below.
     </p>
-  </>
+  </SectionContainer>
 )
 
 const ProjectsSection = () => {
   const projects = useProjects()
   return (
-    <>
-      <h2>Side Projects</h2>
+    <SectionContainer>
+      <SectionHeader>Side Projects</SectionHeader>
       <p>
         Some of my notable side projects that I've been working on recently.
         I've worked on tons of other projecs that you can find on my{' '}
@@ -43,16 +43,16 @@ const ProjectsSection = () => {
           links={project.links}
         />
       ))}
-    </>
+    </SectionContainer>
   )
 }
 
 const ReachOut = () => {
   const links = useLinks()
   return (
-    <>
-      <h2>Find me Elsewhere</h2>
-      <LinkContainer>
+    <SectionContainer>
+      <SectionHeader>Find me Elsewhere</SectionHeader>
+      <div>
         {links.map((link, index) => {
           return (
             <a key={index} href={link.href}>
@@ -60,32 +60,16 @@ const ReachOut = () => {
             </a>
           )
         })}
-      </LinkContainer>
-    </>
+      </div>
+    </SectionContainer>
   )
 }
 
 export default () => (
   <>
     <Heading />
-    <Spacer />
     <About />
-    <Spacer />
     <ProjectsSection />
-    <Spacer />
     <ReachOut />
   </>
 )
-
-const LinkContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  a {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-`
-
-const Spacer = styled.div`
-  height: 2rem;
-`

@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 type Props = {
   title: string
@@ -11,36 +10,13 @@ type Props = {
 }
 
 export const ProjectCard = ({ title, desc, links }: Props) => (
-  <ProjectContainer>
-    <ProjectHeader>{title}</ProjectHeader>
-    <ProjectText>{desc}</ProjectText>
-    <ProjectLinksContainer>
+  <div className="my-4">
+    <h4 className="text-xl">{title}</h4>
+    <p>{desc}</p>
+    <div>
       {links.map((link) => (
-        <ProjectLink href={link.href}>{link.name}</ProjectLink>
+        <a href={link.href}>{link.name}</a>
       ))}
-    </ProjectLinksContainer>
-  </ProjectContainer>
+    </div>
+  </div>
 )
-
-const ProjectContainer = styled.div``
-
-const ProjectHeader = styled.h4`
-  margin-bottom: 0.25rem;
-  padding-bottom: 0;
-`
-
-const ProjectText = styled.p`
-  margin-top: 0;
-  padding-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 0.25rem;
-`
-
-const ProjectLinksContainer = styled.div`
-  margin-top: 0;
-  padding-top: 0;
-`
-
-const ProjectLink = styled.a`
-  margin-right: 1rem;
-`

@@ -33,7 +33,7 @@
     "build": "gatsby build",
     "prettier": "prettier --write ./src/**/*.{ts,tsx}",
     "serve": "gatsby serve",
-    "clean": "rm -rf .cache && rm -rf public",
+    "clean": "gatsby clean",
     "ci": "yarn prettier && yarn tsc"
   }
 }

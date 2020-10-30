@@ -5,7 +5,15 @@ module.exports = {
     author: `Sunny Golovine`,
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: false,
+        tailwind: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
