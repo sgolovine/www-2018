@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import 'normalize.css'
 import { GlobalStyle } from './GlobalStyle'
 import { ReactNode } from 'react'
-// import { Header } from './Header'
 
 type Props = {
   children: ReactNode
@@ -12,10 +11,7 @@ type Props = {
 export const Layout = ({ children }: Props) => (
   <>
     <GlobalStyle />
-    <SiteContainer>
-      {/* <Header /> */}
-      {children}
-    </SiteContainer>
+    <SiteContainer>{children}</SiteContainer>
   </>
 )
 
