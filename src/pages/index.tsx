@@ -7,7 +7,7 @@ import { useProjects } from '../hooks/useProjects'
 const Heading = () => (
   <>
     <h1 className="text-5xl">Hi! My name is Sunny!</h1>
-    <p>
+    <p className="text-lg leading-loose">
       I'm a web developer living in Atlanta, GA. I specialize in building
       websites and mobile apps using React.
     </p>
@@ -17,7 +17,7 @@ const Heading = () => (
 const About = () => (
   <SectionContainer>
     <SectionHeader>About Me</SectionHeader>
-    <p>
+    <p className="text-lg leading-loose">
       Originally from Ekteteriburg, Russia. I came to the United States in 2000
       and have since lived in Atlanta, GA. I currnetly work as a Software
       Engineer, specializing in React and React Native. Check out some of my
@@ -31,10 +31,15 @@ const ProjectsSection = () => {
   return (
     <SectionContainer>
       <SectionHeader>Side Projects</SectionHeader>
-      <p>
+      <p className="text-lg leading-loose">
         Some of my notable side projects that I've been working on recently.
         I've worked on tons of other projecs that you can find on my{' '}
-        <a href="https://github.com/sgolovine">Github Page</a>
+        <a
+          className="text-blue-600 hover:underline"
+          href="https://github.com/sgolovine"
+        >
+          Github Page
+        </a>
       </p>
       {projects.map((project) => (
         <ProjectCard
@@ -52,10 +57,14 @@ const ReachOut = () => {
   return (
     <SectionContainer>
       <SectionHeader>Find me Elsewhere</SectionHeader>
-      <div>
+      <div className="flex flex-col">
         {links.map((link, index) => {
           return (
-            <a key={index} href={link.href}>
+            <a
+              className="text-blue-600 hover:underline text-lg leading-loose"
+              key={index}
+              href={link.href}
+            >
               {link.name}
             </a>
           )
