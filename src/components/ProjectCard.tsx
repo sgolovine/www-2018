@@ -14,8 +14,12 @@ export const ProjectCard = ({ title, desc, links }: Props) => (
     <h4 className="text-xl">{title}</h4>
     <p className="text-gray-900 text-lg leading-loose">{desc}</p>
     <div className="flex flex-row mt-3">
-      {links.map((link) => (
-        <a className="mr-4 text-blue-600 hover:underline" href={link.href}>
+      {links.map((link, index) => (
+        <a
+          key={index}
+          className="mr-4 text-blue-600 hover:underline"
+          href={link.href}
+        >
           {link.name}
         </a>
       ))}

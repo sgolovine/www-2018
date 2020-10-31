@@ -1,4 +1,5 @@
 import React from 'react'
+import { Header } from '~/components/Header'
 import { SectionContainer, SectionHeader } from '~/components/HomeSection'
 import { ProjectCard } from '../components/ProjectCard'
 import { useLinks } from '../hooks/useLinks'
@@ -41,8 +42,9 @@ const ProjectsSection = () => {
           Github Page
         </a>
       </p>
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <ProjectCard
+          key={index}
           title={project.name}
           desc={project.desc}
           links={project.links}
@@ -76,6 +78,7 @@ const ReachOut = () => {
 
 export default () => (
   <>
+    <Header />
     <Heading />
     <About />
     <ProjectsSection />
