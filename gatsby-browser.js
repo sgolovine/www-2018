@@ -1,6 +1,7 @@
 import React from 'react'
 import { Layout } from './src/components/Layout'
-import './tailwind.css'
+import './src/styles/social-icons.css'
+import './src/styles/tailwind.css'
 
 export const wrapPageElement = ({ props, element }) => (
   <Layout {...props}>{element}</Layout>
