@@ -6,6 +6,9 @@
   "main": "index.js",
   "author": "Sunny Golovine",
   "homepage": "https://glvn.co",
+  "engines": {
+    "node": ">=12.13.0"
+  },
   "dependencies": {
     "gatsby": "^2.28.1",
     "gatsby-plugin-matomo": "^0.8.3",
