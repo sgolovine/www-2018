@@ -2,3 +2,9 @@
   base = '/'
   publish = 'public'
   command = 'yarn build'
+
+[[redirects]]
+  from = "https://glvn-co.netlify.app"
+  to = "https://glvn.co"
+  status = 301
+  force = true
