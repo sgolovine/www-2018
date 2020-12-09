@@ -3,16 +3,13 @@
     "github": "https://github.com/sgolovine",
     "instagram": "https://instagram.com/sgolovine",
     "linkedin": "https://linkedin.com/in/SunnyGolovine",
-    "twitter": "https://twitter.com/_glvn"
+    "twitter": "https://twitter.com/_glvn",
+    "dev": "https://dev.to/sgolovine"
   },
   "links": [
     {
       "name": "My Other Website",
       "href": "https://sunny.gg"
-    },
-    {
-      "name": "The Practical Dev (Dev.to)",
-      "href": "https://dev.to/sgolovine"
     },
     {
       "name": "Resume",

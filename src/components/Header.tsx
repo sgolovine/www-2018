@@ -4,6 +4,7 @@ import { GithubIcon } from './icons/Github'
 import { InstagramIcon } from './icons/Instagram'
 import { LinkedInIcon } from './icons/LinkedIn'
 import { TwitterIcon } from './icons/Twitter'
+import { DevToIcon } from './icons/Dev'
 
 type IconButtonProps = {
   href: string
@@ -24,7 +25,12 @@ const IconButton = ({ href, children, alt }: IconButtonProps) => (
 export const Header = () => {
   const headerLinks = useHeaderLinks()
   return (
-    <div className="flex flex-row justify-end">
+    <div className="flex flex-row justify-center md:justify-end">
+      {!!headerLinks.dev && (
+        <IconButton href={headerLinks.dev} alt="dev.to">
+          <DevToIcon />
+        </IconButton>
+      )}
       {!!headerLinks.twitter && (
         <IconButton href={headerLinks.twitter} alt="twitter">
           <TwitterIcon />

@@ -9,6 +9,7 @@ export const useHeaderLinks = () => {
           instagram
           linkedin
           twitter
+          dev
         }
       }
     }
