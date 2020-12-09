@@ -2,7 +2,6 @@ import React from 'react'
 
 export const GithubIcon = () => (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <title>GitHub icon</title>
     <path
       className="github"
       fill="#404040"

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Heading3, Text, Link } from '~/components/Text'
 
 type Props = {
   title: string
@@ -11,18 +12,16 @@ type Props = {
 
 export const ProjectCard = ({ title, desc, links }: Props) => (
   <div className="my-8">
-    <h4 className="text-xl">{title}</h4>
-    <p className="text-gray-900 text-lg leading-loose">{desc}</p>
-    <div className="flex flex-row mt-3">
+    <Heading3>{title}</Heading3>
+    <div className="flex flex-row">
       {links.map((link, index) => (
-        <a
-          key={index}
-          className="mr-4 text-blue-600 hover:underline"
-          href={link.href}
-        >
-          {link.name}
-        </a>
+        <div className="pr-2">
+          <Link key={index} href={link.href}>
+            {link.name}
+          </Link>
+        </div>
       ))}
     </div>
+    <Text>{desc}</Text>
   </div>
 )

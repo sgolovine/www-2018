@@ -5,7 +5,7 @@ type Props = {
 }
 
 export const Layout = ({ children }: Props) => (
-  <div className="max-w-screen py-12">
-    <div className="max-w-screen-md mx-auto px-4">{children}</div>
+  <div className="max-w-screen">
+    <div className="max-w-xl mx-auto py-6">{children}</div>
   </div>
 )

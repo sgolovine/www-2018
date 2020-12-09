@@ -1,29 +1,30 @@
 import React from 'react'
 import { Header } from '~/components/Header'
-import { SectionContainer, SectionHeader } from '~/components/HomeSection'
+import { SectionContainer } from '~/components/HomeSection'
+import { Heading1, Heading2, Link, Text } from '~/components/Text'
 import { ProjectCard } from '../components/ProjectCard'
 import { useLinks } from '../hooks/useLinks'
 import { useProjects } from '../hooks/useProjects'
 
 const Heading = () => (
-  <>
-    <h1 className="text-5xl">Hi! My name is Sunny!</h1>
-    <p className="text-lg leading-loose">
+  <div className="py-4">
+    <Heading1>Sunny Golovine</Heading1>
+    <Text>
       I'm a web developer living in Atlanta, GA. I specialize in building
       websites and mobile apps using React.
-    </p>
-  </>
+    </Text>
+  </div>
 )
 
 const About = () => (
   <SectionContainer>
-    <SectionHeader>About Me</SectionHeader>
-    <p className="text-lg leading-loose">
+    <Heading2>About Me</Heading2>
+    <Text>
       Originally from Ekteteriburg, Russia. I came to the United States in 2000
       and have since lived in Atlanta, GA. I currnetly work as a Software
       Engineer, specializing in React and React Native. Check out some of my
       side projects of things I worked on professionally below.
-    </p>
+    </Text>
   </SectionContainer>
 )
 
@@ -31,17 +32,12 @@ const ProjectsSection = () => {
   const projects = useProjects()
   return (
     <SectionContainer>
-      <SectionHeader>Side Projects</SectionHeader>
-      <p className="text-lg leading-loose">
+      <Heading2>Side Projects</Heading2>
+      <Text>
         Some of my notable side projects that I've been working on recently.
-        I've worked on tons of other projecs that you can find on my{' '}
-        <a
-          className="text-blue-600 hover:underline"
-          href="https://github.com/sgolovine"
-        >
-          Github Page
-        </a>
-      </p>
+        I've worked on tons of other projects that you can find on my
+      </Text>
+      <Link href="https://github.com/sgolovine">Github Page</Link>
       {projects.map((project, index) => (
         <ProjectCard
           key={index}
@@ -58,17 +54,13 @@ const ReachOut = () => {
   const links = useLinks()
   return (
     <SectionContainer>
-      <SectionHeader>Find me Elsewhere</SectionHeader>
+      <Heading2>Find me Elsewhere</Heading2>
       <div className="flex flex-col">
         {links.map((link, index) => {
           return (
-            <a
-              className="text-blue-600 hover:underline text-lg leading-loose"
-              key={index}
-              href={link.href}
-            >
+            <Link key={index} href={link.href}>
               {link.name}
-            </a>
+            </Link>
           )
         })}
       </div>
@@ -79,9 +71,11 @@ const ReachOut = () => {
 export default () => (
   <>
     <Header />
-    <Heading />
-    <About />
-    <ProjectsSection />
-    <ReachOut />
+    <div>
+      <Heading />
+      <About />
+      <ProjectsSection />
+      <ReachOut />
+    </div>
   </>
 )

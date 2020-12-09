@@ -8,12 +8,17 @@ import { TwitterIcon } from './icons/Twitter'
 type IconButtonProps = {
   href: string
   children: ReactNode
+  alt: string
 }
 
-const IconButton = ({ href, children }: IconButtonProps) => (
-  <div className="w-8 mx-2">
-    <a href={href}>{children}</a>
-  </div>
+const IconButton = ({ href, children, alt }: IconButtonProps) => (
+  <a
+    href={href}
+    title={alt}
+    className="flex items-center justify-center h-12 w-12 rounded-full mx-2 transition duration-500 ease-in-out shadow-md hover:shadow-lg"
+  >
+    <div className="h-6 w-6">{children}</div>
+  </a>
 )
 
 export const Header = () => {
@@ -21,22 +26,22 @@ export const Header = () => {
   return (
     <div className="flex flex-row justify-end">
       {!!headerLinks.twitter && (
-        <IconButton href={headerLinks.twitter}>
+        <IconButton href={headerLinks.twitter} alt="twitter">
           <TwitterIcon />
         </IconButton>
       )}
       {!!headerLinks.github && (
-        <IconButton href={headerLinks.github}>
+        <IconButton href={headerLinks.github} alt="github">
           <GithubIcon />
         </IconButton>
       )}
       {!!headerLinks.linkedin && (
-        <IconButton href={headerLinks.linkedin}>
+        <IconButton href={headerLinks.linkedin} alt="linkedin">
           <LinkedInIcon />
         </IconButton>
       )}
       {!!headerLinks.instagram && (
-        <IconButton href={headerLinks.instagram}>
+        <IconButton href={headerLinks.instagram} alt="instagram">
           <InstagramIcon />
         </IconButton>
       )}

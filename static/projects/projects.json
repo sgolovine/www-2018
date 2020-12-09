@@ -38,25 +38,15 @@
       "links": [
         {
           "name": "App Store",
-          "href": "https: //apps.apple.com/us/app/tiptrack/id1495916444"
+          "href": "https://apps.apple.com/us/app/tiptrack/id1495916444"
         },
         {
           "name": "Google Play Store",
-          "href": "https: //play.google.com/store/apps/details?id=com.glvn.tiptrack"
+          "href": "https://play.google.com/store/apps/details?id=com.glvn.tiptrack"
         },
         {
           "name": "Website",
-          "href": "https: //tiptrack.app/"
-        }
-      ]
-    },
-    {
-      "name": "CopyBin",
-      "desc": "Android app for storing canned responses",
-      "links": [
-        {
-          "name": "Google Play Store",
-          "href": "https://play.google.com/store/apps/details?id=com.glvn.copybin"
+          "href": "https://tiptrack.app/"
         }
       ]
     },
@@ -66,11 +56,11 @@
       "links": [
         {
           "name": "Website",
-          "href": "https: //sunny.sh"
+          "href": "https://sunny.sh"
         },
         {
           "name": "Source Code",
-          "href": "https: //github.com/sgolovine/sunny.gg"
+          "href": "https://github.com/sgolovine/sunny.gg"
         }
       ]
     }
