@@ -1,6 +1,5 @@
 [build]
   base = '/'
-  publish = 'public/'
+  publish = 'public'
   command = 'yarn build'
-[build.enviorment]
-  NODE_VERSION = "14.15.1"
+  enviorment = { NODE_VERSION = "14.15.1" }
