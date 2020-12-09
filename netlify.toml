@@ -1,12 +1,6 @@
 [build]
-  # Base Directory
   base = '/'
-  
-  # Build Command
-  publish = '/public'
-
-  # Publish Directory (after build)
+  publish = 'public/'
   command = 'yarn build'
-
 [build.enviorment]
   NODE_VERSION = "14.15.1"
