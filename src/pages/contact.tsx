@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Heading1, Text, Link } from '~/components/Text'
+import { handleNetlifyFormsRequest } from '~/services/handleSend'
 
 export default () => {
   const [name, setName] = useState<string>('')
@@ -20,13 +21,14 @@ export default () => {
       return
     }
 
-    const composedMessage = {
-      name,
-      email,
-      message,
-    }
+    handleNetlifyFormsRequest(name, email, message)
+      .then(() => {
+        alert('message sent successfully')
+      })
+      .catch((err) => {
+        alert('could not send message')
+      })
 
-    alert(JSON.stringify(composedMessage))
     // TODO: Send it!
   }
 
