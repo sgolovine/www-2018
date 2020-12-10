@@ -5,19 +5,19 @@ type TextProps = {
 }
 
 export const Heading1 = ({ children }: TextProps) => (
-  <h1 className="text-3xl font-bold leading-loose">{children}</h1>
+  <h1 className="text-3xl font-bold leading-loose text-gray-600">{children}</h1>
 )
 
 export const Heading2 = ({ children }: TextProps) => (
-  <h2 className="text-2xl font-semibold">{children}</h2>
+  <h2 className="text-2xl font-semibold text-gray-600">{children}</h2>
 )
 
 export const Heading3 = ({ children }: TextProps) => (
-  <h3 className="text-lg font-semibold">{children}</h3>
+  <h3 className="text-lg font-semibold text-gray-700">{children}</h3>
 )
 
 export const Text = ({ children }: TextProps) => (
-  <p className="leading-loose">{children}</p>
+  <p className="leading-loose text-gray-900">{children}</p>
 )
 
 export const Link = ({ href, children }: TextProps & { href: string }) => (

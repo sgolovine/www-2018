@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from '~/components/Header'
 import { SectionContainer } from '~/components/HomeSection'
 import { Heading1, Heading2, Link, Text } from '~/components/Text'
 import { ProjectCard } from '../components/ProjectCard'
@@ -9,10 +8,7 @@ import { useProjects } from '../hooks/useProjects'
 const Heading = () => (
   <div className="py-4">
     <Heading1>Sunny Golovine</Heading1>
-    <Text>
-      I'm a web developer living in Atlanta, GA. I specialize in building
-      websites and mobile apps using React.
-    </Text>
+    <Text>Some guy making iPhone apps.</Text>
   </div>
 )
 
@@ -20,10 +16,11 @@ const About = () => (
   <SectionContainer>
     <Heading2>About Me</Heading2>
     <Text>
-      Originally from Ekteteriburg, Russia. I came to the United States in 2000
-      and have since lived in Atlanta, GA. I currnetly work as a Software
-      Engineer, specializing in React and React Native. Check out some of my
-      side projects of things I worked on professionally below.
+      I came here from Russia in 2000 and went to Georgia Southern University
+      where I graduated with a Bachelors in Computer Science. Since then I have
+      worked with several companies helping them build next generation web and
+      mobile applications using React, React Native and other modern web and
+      mobile technologies.
     </Text>
   </SectionContainer>
 )
@@ -70,12 +67,9 @@ const ReachOut = () => {
 
 export default () => (
   <>
-    <Header />
-    <div>
-      <Heading />
-      <About />
-      <ProjectsSection />
-      <ReachOut />
-    </div>
+    <Heading />
+    <About />
+    <ProjectsSection />
+    <ReachOut />
   </>
 )

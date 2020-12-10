@@ -22,7 +22,7 @@ const IconButton = ({ href, children, alt }: IconButtonProps) => (
   </a>
 )
 
-export const Header = () => {
+export const SocialHeader = () => {
   const headerLinks = useHeaderLinks()
   return (
     <div className="flex flex-row justify-center md:justify-end">
