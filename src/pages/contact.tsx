@@ -47,11 +47,22 @@ export default () => {
         <Link href="mailto:sunny@glvn.co">sunny@glvn.co</Link>. If you are a
         recruiter the best place to reach me is on{' '}
         <Link href="https://linkedin.com/in/sunnygolovine/">LinkedIn</Link>
-        <div className="px-4 my-4">
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSend}
+          className="px-4 my-4"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
           <label className="text-sm font-bold">Your name</label>
           <input
             className="border w-full h-12 mb-2 p-2"
             placeholder="Enter your name"
+            name="name"
+            type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -60,6 +71,8 @@ export default () => {
           <input
             className="border w-full h-12 mb-2 p-2"
             placeholder="Enter your email"
+            type="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -68,13 +81,14 @@ export default () => {
           <textarea
             className="border w-full h-32 p-2"
             placeholder="Hey Sunny..."
+            name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
           />
           <div>
             <button
-              onClick={handleSend}
+              type="submit"
               className="w-36 border rounded-md p-2 mr-2 bg-green-200"
             >
               Send Message
@@ -86,7 +100,7 @@ export default () => {
               Clear
             </button>
           </div>
-        </div>
+        </form>
       </Text>
     </div>
   )
