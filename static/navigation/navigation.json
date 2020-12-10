@@ -1,0 +1,34 @@
+{
+  "navLinks": [
+    {
+      "name": "Home",
+      "route": "/",
+      "alt": "home",
+      "enabled": true
+    },
+    {
+      "name": "About",
+      "route": "/about",
+      "alt": "about",
+      "enabled": false
+    },
+    {
+      "name": "Projects",
+      "route": "/projects",
+      "alt": "projects",
+      "enabled": false
+    },
+    {
+      "name": "Contact",
+      "route": "/contact",
+      "alt": "contact-me",
+      "enabled": true
+    },
+    {
+      "name": "Blog",
+      "route": "/blog",
+      "alt": "blog",
+      "enabled": true
+    }
+  ]
+}
