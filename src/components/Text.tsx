@@ -1,7 +1,7 @@
 import React from 'react'
 
 type TextProps = {
-  children: string
+  children: any
 }
 
 export const Heading1 = ({ children }: TextProps) => (

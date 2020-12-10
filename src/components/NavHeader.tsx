@@ -10,7 +10,7 @@ export const NavHeader = () => {
         if (headerLink.enabled) {
           return (
             <GatsbyLink
-              className="text-blue-600 hover:text-blue-400 hover:underline px-2 text-lg font-semibold"
+              className="text-blue-600 hover:text-blue-400 px-2 text-lg font-semibold"
               key={headerLink.alt}
               to={headerLink.route}
             >
