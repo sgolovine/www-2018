@@ -28,7 +28,7 @@
       "name": "Blog",
       "route": "/blog",
       "alt": "blog",
-      "enabled": true
+      "enabled": false
     }
   ]
 }
