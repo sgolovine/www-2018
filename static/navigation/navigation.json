@@ -4,31 +4,50 @@
       "name": "Home",
       "route": "/",
       "alt": "home",
+      "external": false,
       "enabled": true
     },
     {
       "name": "About",
       "route": "/about",
       "alt": "about",
+      "external": false,
       "enabled": false
     },
     {
       "name": "Projects",
       "route": "/projects",
       "alt": "projects",
+      "external": false,
       "enabled": false
     },
     {
       "name": "Contact",
       "route": "/contact",
       "alt": "contact-me",
+      "external": false,
+      "enabled": true
+    },
+    {
+      "name": "Links",
+      "route": "https://sunny.gg",
+      "alt": "link",
+      "external": true,
+      "enabled": true
+    },
+    {
+      "name": "Resume",
+      "route": "https://resume.glvn.co",
+      "alt": "resume",
+      "external": true,
       "enabled": true
     },
     {
       "name": "Blog",
-      "route": "/blog",
+      "route": "https://blog.glvn.co",
       "alt": "blog",
-      "enabled": false
+      "external": true,
+      "enabled": true
     }
   ]
 }

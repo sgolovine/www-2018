@@ -3,5 +3,6 @@ export type NavLink = {
   enabled: boolean
   name: string
   route: string
+  external: boolean
 }
 export type NavLinks = NavLink[]
