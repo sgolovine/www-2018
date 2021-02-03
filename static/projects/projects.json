@@ -1,5 +1,10 @@
 {
   "projects": [
+     
+    {
+      "name": "Property Abacus (Upcomming)",
+      "desc": "And upcomming real estate investment calculator. Built with NextJS and TailwindCSS, allows users to caculate rental income and expenses on a property"
+    },
     {
       "name": "Webhost Watchdog",
       "desc": "Webhost Watchdog is a blog for comprehensive reviews of webhosting products. Reviews the most popular webhosting products form the top hosting companies in the market today",
@@ -7,6 +12,16 @@
         {
           "name": "Website",
           "href": "https://webhostwatchdog.com"
+        }
+      ]
+    },
+    {
+      "name": "My Resume",
+      "desc": "An online resume built using NextJS and TailwindCSS",
+      "links": [
+        {
+          "name": "Website",
+          "href": "https://resume.glvn.co"
         }
       ]
     },

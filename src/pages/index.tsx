@@ -8,7 +8,7 @@ import { useProjects } from '../hooks/useProjects'
 const Heading = () => (
   <div className="py-4">
     <Heading1>Sunny Golovine</Heading1>
-    <Text>Some guy making iPhone apps.</Text>
+    <Text>I make iPhone Apps</Text>
   </div>
 )
 
